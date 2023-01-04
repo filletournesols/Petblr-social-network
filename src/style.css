@@ -5,6 +5,7 @@
     background-color: var(--lightIvory);
 }
 
+<<<<<<< HEAD
 :root {
     /* creamos "constantes" con colores, tipografia, etc. que utilizaremos en el proyecto */
     --lightIvory: #f5f2eb;
@@ -20,6 +21,24 @@
     --cherryRed: #901921;
     --black: #000000;
     --font-family: Arial, Helvetica, sans-serif;
+=======
+:root{
+/* creamos "constantes" con colores, tipografia, etc. que utilizaremos en el proyecto */
+--lightIvory:#F8EDE4;
+--dogBrown: #563c2e;
+--palePink: #dcc5b6;
+--lightPink: #d7a799;
+--redCollar: #a91918;
+--blue: #086680;
+--chocolate: #492319;
+--fallOrange: #a24c33;
+--fairIvory:#F7DFD3;
+--ivory: #dfcfab;
+--pigPink: #e5a5a4;
+--cherryRed: #901921;
+--black: #000000;
+--font-family: Arial, Helvetica, sans-serif;
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
 }
 
 /* Placeholder */
@@ -44,6 +63,7 @@ html {
     font-size: 62.5%;
 }
 
+<<<<<<< HEAD
 main {
     width: 100vw;
 }
@@ -51,6 +71,29 @@ main {
 /* div main */
 main .main-logo-div {
     align-items: center;
+=======
+main{
+    width: 100%;
+}
+
+
+/* main logo/ */
+main .main-logo .main-logo-img {
+    /* width: 85%;  */
+    margin-top: 10%;
+    
+}
+
+main .hello-home{
+    background: none;
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+/* div main */
+main .main-div{
+
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
     font-size: 2rem;
     text-align: center;
     margin: 4rem;
@@ -65,18 +108,21 @@ main .home .home-div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffebdf;
+    background-color: var(--fairIvory);
     padding: 3em;
     margin-left: 30%;
 }
 
 main .home .home-div .home-create-account-intro {
-    width: 70%;
-    text-align: center;
+    width: 90%;
+    text-align: justify;
     margin-bottom: 3.5rem;
-    font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     background: none;
+<<<<<<< HEAD
+=======
+    color: var(--dogBrown);
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
 
 }
 
@@ -85,9 +131,11 @@ main .home-background {
 }
 
 main .home .home-question {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     background: none;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--dogBrown);
 }
 
 /* color boton main */
@@ -99,17 +147,18 @@ main .home .home-question {
 main .home .home-div button {
     cursor: pointer;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     border-radius: 1rem;
-    width: 40rem;
-    height: 5rem;
+    width: 20rem;
+    height: 4rem;
     background-color: var(--pigPink);
 }
 
 main .home .home-div .home-create-account {
-    margin-top: 5rem;
-    font-size: 2rem;
+    margin-top: 3rem;
+    font-size: 1.9rem;
     color: var(var(--lightIvory));
+    font-weight: 500;
 }
 
 /* email/Facebook LogIn */
@@ -140,18 +189,26 @@ main .email-facebook-page .email-facebook-div button {
     height: 5rem;
     background-color: var(--pigPink);
     border: none;
-    padding: 1.5rem;
+    padding: 1.2rem;
 }
 
 main .email-facebook-page .email-facebook-div .email-btn {
     color: var(--lightIvory);
+<<<<<<< HEAD
     margin-top: 5rem
+=======
+    margin-top: 5rem ;
+    font-size: 1.9rem;
+
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
 }
 
 main .email-facebook-page .email-facebook-div .facebook-btn {
     color: var(--lightIvory);
     margin-top: 2rem;
     background-color: var(--blue);
+    font-size: 1.9rem;
+
 }
 
 /* log in form */
@@ -215,7 +272,7 @@ main .register .register-form label {
 }
 
 main .register-form-background {
-    background-color: #ffebdf;
+    background-color: var(--fairIvory);
     height: 30%;
     display: flex;
     flex-direction: column;
@@ -241,35 +298,39 @@ main .register .register-form .register-form-repeat-psw {
 
 main .register .register-form ::placeholder {
     font-size: 2rem;
+<<<<<<< HEAD
 
+=======
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
 }
 
 main .register .register-form input {
     outline: none;
     background: none;
     border: none;
-    border-bottom: 3px solid black;
-    font-size: 2rem;
+    border-bottom: 2px solid black;
+    /* font-size: 2rem; */
     text-indent: 1rem;
     margin-top: 1.5rem;
     color: var(--dogBrown);
-    font-family: 'Merriweather', serif;
-    width: 60rem;
-    height: 5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font: 2em sans-serif;
+    /* width: 60rem;
+    height: 5rem; */
 }
 
 main .register .register-form button {
     background: none;
     cursor: pointer;
     border: none;
-    font-size: 2rem;
+    font-size: 1.9rem;
     margin-top: 3rem;
     color: var(--lightIvory);
     border-radius: 1rem;
-    width: 40rem;
-    height: 5rem;
+    width: 20rem;
+    height: 4rem;
     background-color: var(--pigPink);
-    padding: 1.5rem;
+   
 }
 
 /* auth error */
@@ -325,12 +386,26 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
     margin-top: 1rem;
 }
 
-
 /* responsive */
+<<<<<<< HEAD
 
 @media screen and (min-width: 320px) {
     .main-logo-img {
         width: 70%;
+=======
+/* 1rem=16px  16x5=80px */
+/* 5rem = 80 px */
+@media screen and (min-width: 5rem){
+    .main-logo-img{
+        width: 50%;
+    }
+}
+/* 2rem = 320 px */
+@media screen and (min-width: 20rem){
+    .main-logo-img{
+        margin-left: 5%;
+        width: 50%;
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
     }
 
     main .home .home-div .home-create-account-intro {
@@ -339,13 +414,14 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
 
     main .home .home-div {
         width: 100%;
-        margin-left: 20%;
+        margin: 18%;
     }
 
     main .home .home-question {
         font-size: 1.5rem;
     }
 
+<<<<<<< HEAD
     main .home .home-div button {
         width: 20rem;
         height: 4rem;
@@ -354,6 +430,9 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
     }
 
     main .email-facebook-page .email-facebook-div button {
+=======
+    main .email-facebook-page .email-facebook-div button{
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
         width: 25rem;
         height: 4rem;
         border-radius: 0.8rem;
@@ -364,11 +443,12 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
         width: 20rem;
         height: 3rem;
         border-bottom: 2px solid black;
-        font: 1em sans-serif;
+        /* font: 1em sans-serif; */
     }
 
     main .register-form-background {
         width: 30em;
+<<<<<<< HEAD
     }
 
     main .register .register-form button {
@@ -376,6 +456,13 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
         height: 4rem;
         border-radius: 0.8rem;
         font-size: 1.4rem;
+=======
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--fairIvory);
+        padding: 3em;
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
     }
 
     ::placeholder {
@@ -387,10 +474,15 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
         font-style: italic;
     }
 }
+<<<<<<< HEAD
 
 @media screen and (min-width: 480px) {
+=======
+/* 30rem = 480 px */
+@media screen and (min-width: 30rem){
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
     .main-logo-img {
-        width: 55%;
+        width: 53%;
     }
 
     main .home .home-div .home-create-account-intro {
@@ -409,13 +501,18 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
     }
 
     main .register-form-background {
-        width: 40em;
+        width: 70%;
     }
 }
+<<<<<<< HEAD
 
 @media screen and (min-width: 640px) {
+=======
+/* 40rem = 640 px */
+@media screen and (min-width: 40rem){
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
     .main-logo-img {
-        width: 58%;
+        width: 57%;
     }
 
     main .home .home-div {
@@ -440,11 +537,12 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
 
     main .register .register-form input {
         font: 2rem sans-serif;
-        width: 35rem;
+        width: 80%;
         height: 3rem;
         border-bottom: 2px solid black;
     }
 
+<<<<<<< HEAD
     main .register-form-background {
         width: 45em;
     }
@@ -453,6 +551,16 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
 @media screen and (min-width: 960px) {
     .main-logo-img {
         width: 57%;
+=======
+    main .register-form-background{
+        width: 70%em;
+    }
+}
+/* 62rem = 992px */
+@media screen and (min-width: 62rem){
+    .main-logo-img{
+        width: 60%;
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
     }
 
     main .home .home-div {
@@ -461,7 +569,7 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
     }
 
     main .register-form-background {
-        width: 55em;
+        width: 70%;
     }
 
     main .home .home-div .home-create-account-intro {
@@ -472,20 +580,34 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
         font-size: 2.5rem;
     }
 
+<<<<<<< HEAD
     main .register .register-form input {
         width: 40rem;
+=======
+    main .register .register-form input{
+        width: 80%;
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
         height: 3rem;
         border-bottom: 2px solid black;
     }
 }
+<<<<<<< HEAD
 
 @media screen and (min-width: 1366px) {
     .main-logo-img {
         width: 53%;
     }
 
+=======
+/* 87rem = 1392px */
+@media screen and (min-width: 87rem){
+    main .main-logo-img{
+        width: 57%;
+        
+     } 
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
     main .register-form-background {
-        width: 70em;
+        width: 70em; 
     }
 
     main .home .home-div .home-create-account-intro {
@@ -499,7 +621,9 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
     main .home .home-div {
         width: 70%;
         margin-left: 30%;
+        margin-top: 20em;
     }
+<<<<<<< HEAD
 
     main .register .register-form input {
         width: 55rem;
@@ -509,3 +633,16 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
     }
 
 }
+=======
+    
+    main .register .register-form input{
+        width: 65rem;
+        height: 3rem;
+        border-bottom: 2px solid black;
+    }
+} 
+
+
+
+
+>>>>>>> d48c88c4a07325f5e1dcb2531c71a3bbd0decccc
