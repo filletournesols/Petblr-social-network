@@ -41,14 +41,19 @@ const PATHS = {
                     <h1 class="auth-error-text">Lo sentimos, correo en uso.</h1>
                 </div>
             </section>
-            <section class="auth-funciona hidden" id="authFunciona">
-                <div class="auth-error-div">
-                    <h1 class="auth-funciona-text">Funciona!</h1>
-                </div>
-            </section>
-
         `,
   },
+//   signup: {
+//     path: '/signup',
+//     template: `
+           
+//             <section class="auth-error hidden" id="authError">
+//                 <div class="auth-error-div">
+//                     <h1 class="auth-error-text">Lo sentimos, correo en uso.</h1>
+//                 </div>
+//             </section>
+//         `,
+//   },
   login: {
     path: '/login',
     template: `
@@ -60,4 +65,38 @@ const PATHS = {
         </section>
         `,
   },
+  loginFacebook: {
+    path: '/loginFacebook',
+    template: `
+        <section class="login-facebook" id="loginFacebook">
+            <form class="login-facebook-form" id="loginFacebookForm">
+                <input type="user" class="login-facebook-form-user-name-input" id="loginFacebookFormUserNameInput" placeholder="Nombre de usuario" required />
+                <input type="password" class="login-facebook-form-password-input" id="loginFacebookFormPasswordInput" placeholder="CONTRASEÑA" required />
+                <button class="login-facebook-form-btn" id="loginFacebookFormBtn">INGRESAR</button>
+            </form>
+        </section>
+         `,
+  },
+  loginMail: {
+    path: '/loginMail',
+    template: `
+        <section class="login-mail" id="loginMail">
+            <form class="login-mail-form" id="loginMailForm">
+                <input type="user" class="login-mail-form-user-name-input" id="loginMailFormUserNameInput" placeholder="hola@petblr.com" required />
+                <input type="password" class="login-mail-form-password-input" id="loginMailFormPasswordInput" placeholder="CONTRASEÑA" required />
+                <button class="login-mail-form-btn" id="loginMailFormBtn">INGRESAR</button>
+            </form>
+        </section>
+         `,
+  },
+  feed: {
+    path: '/feed',
+    template: `
+        <section class="feed" id="feed">
+            <h1> Estamos trabajando para usted...</h1>
+        </section>
+         `,
+  },
+
+
 };

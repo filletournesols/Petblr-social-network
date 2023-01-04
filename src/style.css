@@ -1,32 +1,32 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: var(--lightIvory);    
+    background-color: var(--lightIvory);
 }
 
-:root{
-/* creamos "constantes" con colores, tipografia, etc. que utilizaremos en el proyecto */
---lightIvory: #f5f2eb;
---dogBrown: #563c2e;
---palePink: #dcc5b6;
---lightPink: #d7a799;
---redCollar: #a91918;
---blue: #086680;
---chocolate: #492319;
---fallOrange: #a24c33;
---ivory: #dfcfab;
---pigPink: #e5a5a4;
---cherryRed: #901921;
---black: #000000;
---font-family: Arial, Helvetica, sans-serif;
+:root {
+    /* creamos "constantes" con colores, tipografia, etc. que utilizaremos en el proyecto */
+    --lightIvory: #f5f2eb;
+    --dogBrown: #563c2e;
+    --palePink: #dcc5b6;
+    --lightPink: #d7a799;
+    --redCollar: #a91918;
+    --blue: #086680;
+    --chocolate: #492319;
+    --fallOrange: #a24c33;
+    --ivory: #dfcfab;
+    --pigPink: #e5a5a4;
+    --cherryRed: #901921;
+    --black: #000000;
+    --font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Placeholder */
-::placeholder{
+::placeholder {
     color: var(--dogBrown);
     font-family: Arial, Helvetica, sans-serif;
-    }
+}
 
 /* inactive components */
 .hidden {
@@ -40,16 +40,16 @@
 }
 
 /* para utilizar rem = 1, ayuda para responsive */
-html{
+html {
     font-size: 62.5%;
 }
 
-main{
+main {
     width: 100vw;
 }
 
 /* div main */
-main .main-logo-div{
+main .main-logo-div {
     align-items: center;
     font-size: 2rem;
     text-align: center;
@@ -57,7 +57,7 @@ main .main-logo-div{
 }
 
 /* Home */
-main .home{
+main .home {
     width: 75%;
 }
 
@@ -77,10 +77,10 @@ main .home .home-div .home-create-account-intro {
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     background: none;
-    
+
 }
 
-main .home-background{
+main .home-background {
     background-color: #f7e0d4;
 }
 
@@ -93,10 +93,10 @@ main .home .home-question {
 /* color boton main */
 .home-div button {
     color: var(--lightIvory);
-    font-size: 1.5rem;  
+    font-size: 1.5rem;
 }
 
-main .home .home-div button{
+main .home .home-div button {
     cursor: pointer;
     border: none;
     font-size: 1.5rem;
@@ -122,9 +122,10 @@ main .email-facebook-page .email-facebook-div {
 
 main .email-facebook-page .email-facebook-div label {
     font-size: 2rem;
-    margin-top:11rem;
+    margin-top: 11rem;
 
 }
+
 /* boton email/facebook*/
 main .email-facebook-page .email-facebook-div button {
     display: flex;
@@ -133,7 +134,7 @@ main .email-facebook-page .email-facebook-div button {
     text-align: center;
     background: none;
     cursor: pointer;
-    font-size: 2rem ;
+    font-size: 2rem;
     border-radius: 1rem;
     width: 40rem;
     height: 5rem;
@@ -144,7 +145,7 @@ main .email-facebook-page .email-facebook-div button {
 
 main .email-facebook-page .email-facebook-div .email-btn {
     color: var(--lightIvory);
-    margin-top: 5rem 
+    margin-top: 5rem
 }
 
 main .email-facebook-page .email-facebook-div .facebook-btn {
@@ -186,6 +187,7 @@ main .login-section .login-form .login-form-password {
     font-size: 2rem;
     margin-top: 0.5rem;
 }
+
 /* boton */
 main .login-section .login-form button {
     display: flex;
@@ -237,12 +239,12 @@ main .register .register-form .register-form-repeat-psw {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-main .register .register-form ::placeholder{
+main .register .register-form ::placeholder {
     font-size: 2rem;
-    
+
 }
 
-main .register .register-form input{
+main .register .register-form input {
     outline: none;
     background: none;
     border: none;
@@ -256,7 +258,7 @@ main .register .register-form input{
     height: 5rem;
 }
 
-main .register .register-form button{
+main .register .register-form button {
     background: none;
     cursor: pointer;
     border: none;
@@ -271,27 +273,27 @@ main .register .register-form button{
 }
 
 /* auth error */
-main .auth-error .auth-error-div{
+main .auth-error .auth-error-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-main .auth-error .auth-error-div .auth-error-text{
+main .auth-error .auth-error-div .auth-error-text {
     font-size: 2rem;
     margin-top: 2rem;
 }
 
 /* auth funciona */
-main .auth-funciona .auth-error-div{
+main .auth-funciona .auth-error-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-main .auth-funciona .auth-error-div .auth-funciona-text{
+main .auth-funciona .auth-error-div .auth-funciona-text {
     font-size: 2rem;
     margin-top: 2rem;
 }
@@ -303,7 +305,7 @@ main .log-in-sign-up .log-in-sign-up-div {
     align-items: center;
 }
 
-main .log-in-sign-up .log-in-sign-up-div button{
+main .log-in-sign-up .log-in-sign-up-div button {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -326,8 +328,8 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
 
 /* responsive */
 
-@media screen and (min-width: 320px){
-    .main-logo-img{
+@media screen and (min-width: 320px) {
+    .main-logo-img {
         width: 70%;
     }
 
@@ -351,41 +353,42 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
         font-size: 1.5rem;
     }
 
-    main .email-facebook-page .email-facebook-div button{
+    main .email-facebook-page .email-facebook-div button {
         width: 25rem;
         height: 4rem;
         border-radius: 0.8rem;
         font-size: 1.4rem;
     }
-    main .register .register-form input{
+
+    main .register .register-form input {
         width: 20rem;
         height: 3rem;
         border-bottom: 2px solid black;
         font: 1em sans-serif;
     }
 
-    main .register-form-background{
+    main .register-form-background {
         width: 30em;
     }
 
-    main .register .register-form button{
+    main .register .register-form button {
         width: 25rem;
         height: 4rem;
         border-radius: 0.8rem;
         font-size: 1.4rem;
     }
 
-    ::placeholder{
+    ::placeholder {
         font-size: 1rem;
     }
 
-    main .register .register-form .register-form-psw-recomendation{
+    main .register .register-form .register-form-psw-recomendation {
         font-size: 1rem;
         font-style: italic;
     }
 }
 
-@media screen and (min-width: 480px){
+@media screen and (min-width: 480px) {
     .main-logo-img {
         width: 55%;
     }
@@ -398,7 +401,7 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
         font-size: 1.9rem;
     }
 
-    main .register .register-form input{
+    main .register .register-form input {
         width: 30rem;
         height: 3rem;
         border-bottom: 2px solid black;
@@ -410,7 +413,7 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
     }
 }
 
-@media screen and (min-width: 640px){
+@media screen and (min-width: 640px) {
     .main-logo-img {
         width: 58%;
     }
@@ -435,22 +438,23 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
         font-size: 1.4rem;
     }
 
-    main .register .register-form input{
+    main .register .register-form input {
         font: 2rem sans-serif;
         width: 35rem;
         height: 3rem;
         border-bottom: 2px solid black;
     }
 
-    main .register-form-background{
+    main .register-form-background {
         width: 45em;
     }
 }
 
-@media screen and (min-width: 960px){
-    .main-logo-img{
+@media screen and (min-width: 960px) {
+    .main-logo-img {
         width: 57%;
     }
+
     main .home .home-div {
         width: 100%;
         margin-left: 20%;
@@ -468,17 +472,18 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
         font-size: 2.5rem;
     }
 
-    main .register .register-form input{
+    main .register .register-form input {
         width: 40rem;
         height: 3rem;
         border-bottom: 2px solid black;
     }
 }
 
-@media screen and (min-width: 1366px){
-    .main-logo-img{
+@media screen and (min-width: 1366px) {
+    .main-logo-img {
         width: 53%;
     }
+
     main .register-form-background {
         width: 70em;
     }
@@ -495,12 +500,12 @@ main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
         width: 70%;
         margin-left: 30%;
     }
-    
-    main .register .register-form input{
+
+    main .register .register-form input {
         width: 55rem;
         height: 3rem;
         border-bottom: 2px solid black;
-        
+
     }
-    
+
 }
