@@ -36,7 +36,8 @@ class Router {
      */
   load(page = 'home') {
     const { paths } = this;
-    const helper = paths.find(page) ? page : 'home'
+    const keys = Object.keys(paths)
+    const helper = keys.find(page) ? page : 'home'
     const { path, template } = paths[helper] || paths.error;
     const $CONTAINER = document.querySelector('#content');
     $CONTAINER.innerHTML = template;
