@@ -36,7 +36,8 @@ class Router {
      */
   load(page = 'home') {
     const { paths } = this;
-    const { path, template } = paths[page] || paths.error;
+    const helper = paths.find(page) ? page : 'home'
+    const { path, template } = paths[helper] || paths.error;
     const $CONTAINER = document.querySelector('#content');
     $CONTAINER.innerHTML = template;
     window.history.pushState({}, 'Genial', path);
