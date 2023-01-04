@@ -23,6 +23,7 @@ class Router {
         pathname = '/',
       },
     } = window;
+    console.log({pathname})
     const URI = pathname === '/' ? 'home' : pathname.replace('/', '');
     console.log({URI})
     this.load(URI);
