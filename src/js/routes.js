@@ -43,6 +43,15 @@ const PATHS = {
                     <h1 class="auth-error-text">Lo sentimos, correo en uso.</h1>
                 </div>
             </section>
+<<<<<<< HEAD
+=======
+            <section class="auth-funciona hidden" id="authFunciona">
+                <div class="auth-error-div">
+                    <h1 class="auth-funciona-text">Correo de confirmación enviado</h1>
+                </div>
+            </section>
+
+>>>>>>> 1ac58716087bb0a044c60a50b5baf077132a2b54
         `,
   },
 //   signup: {
