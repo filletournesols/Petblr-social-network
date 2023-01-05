@@ -24,7 +24,12 @@ class Router {
       },
     } = window;
     console.log({pathname})
-    const URI = pathname === '/' ? 'home' : pathname.replace('/', '');
+    
+    // const justSlash = pathname.split('/')
+    // justSlash[justSlash.length - 1]
+    // const lastSlash = justSlash[justSlash.length - 1]
+
+    const URI = pathname === '/' ? 'home' : justSlash[justSlash.length - 1].replace('/', '');
     console.log({URI})
     this.load(URI);
   }
