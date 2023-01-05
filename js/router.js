@@ -29,7 +29,7 @@ class Router {
     // justSlash[justSlash.length - 1]
     // const lastSlash = justSlash[justSlash.length - 1]
 
-    const URI = pathname === '/' ? 'home' : justSlash[justSlash.length - 1].replace('/', '');
+    const URI = pathname === '/' ? 'home' : pathname[justSlash.length - 1].replace('/', '');
     console.log({URI})
     this.load(URI);
   }
