@@ -23,7 +23,14 @@ class Router {
         pathname = '/',
       },
     } = window;
+    console.log({pathname})
+    
+    // const justSlash = pathname.split('/')
+    // justSlash[justSlash.length - 1]
+    // const lastSlash = justSlash[justSlash.length - 1]
+
     const URI = pathname === '/' ? 'home' : pathname.replace('/', '');
+    console.log({URI})
     this.load(URI);
   }
 
@@ -34,7 +41,9 @@ class Router {
      */
   load(page = 'home') {
     const { paths } = this;
-    const { path, template } = paths[page] || paths.error;
+    const helper = paths[page] ? page : 'home'
+    console.log({helper})
+    const { path, template } = paths[helper] || paths.error;
     const $CONTAINER = document.querySelector('#content');
     $CONTAINER.innerHTML = template;
     window.history.pushState({}, 'Genial', path);
