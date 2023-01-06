@@ -1,4 +1,4 @@
-import {onNavigate} from '../main.js';
+import { onNavigate } from '../main.js';
 
 //creamos la función Home que va a contener una variable que será un div que será el resultado que vamos a devolver
 export const Home = () => {
@@ -26,7 +26,8 @@ export const Home = () => {
     `
     HomeDiv.innerHTML = template 
     // al Div debemos crearle los eventos querySelector.
-    HomeDiv.querySelector('#navLinkCreateAccount').addEventListener('click', () => onNavigate('/signup'))
+    HomeDiv.querySelector('#navLinkCreateAccount').addEventListener('click', () => onNavigate('/signup'));
+    HomeDiv.querySelector('#navLinkLogin').addEventListener('click', () => onNavigate('/login'))
 
     // //se crean los botones y le damos de una vez el texto que vamos a mostrar
     
