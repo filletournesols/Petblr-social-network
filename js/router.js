@@ -42,10 +42,11 @@ class Router {
   load(page = 'home') {
     const { paths } = this;
     const helper = paths[page] ? page : 'home'
+    //recorrer page y ver si termina con paths
     console.log({helper})
     const { path, template } = paths[helper] || paths.error;
     const $CONTAINER = document.querySelector('#content');
     $CONTAINER.innerHTML = template;
-    window.history.pushState({}, 'Genial', path);
+    // window.history.pushState({}, 'Genial', path);
   }
 }
