@@ -20,6 +20,18 @@ const routes = {
     // '/login': Login
 };
 
+export const onNavigate = (pathname) => {
+    window.history.pushState(
+        {state:pathname},
+        pathname,
+        window.location.origin + pathname
+    );
+    while(root.firstChild){
+        root.removeChild(root.firstChild);
+    }
+    root.appendChild(routes[pathname]());
+};
+
 const component = routes[window.location.pathname];
 // Crear una función para que recargue y le diga al navedador de dónde partir
 //debemos resetear el contenido del router.
