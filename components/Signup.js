@@ -30,8 +30,8 @@ export const Signup = () => {
         </section>
     `
     SignupDiv.innerHTML = template 
-    SignupDiv.querySelector('#registerDivBtn').addEventListener('click', registrar, () => onNavigate('/feed'))
-    SignupDiv.querySelector('#registerDivBtn').addEventListener('click', () => onNavigate('/feed'))
+    SignupDiv.querySelector('#registerDivBtn').addEventListener('click', registrar)
+    // SignupDiv.querySelector('#registerDivBtn').addEventListener('click', () => onNavigate('/feed'))
 
     return SignupDiv;
 }
