@@ -6,7 +6,6 @@
 }
 
 :root {
-    /* creamos "constantes" con colores, tipografia, etc. que utilizaremos en el proyecto */
     --lightIvory: #F8EDE4;
     --dogBrown: #563c2e;
     --palePink: #dcc5b6;
@@ -70,7 +69,6 @@ main .hello-home {
 
 /* div main */
 main .main-div {
-
     font-size: 2rem;
     text-align: center;
     margin: 4rem;
@@ -97,7 +95,6 @@ main .home .home-div .home-create-account-intro {
     font-family: Arial, Helvetica, sans-serif;
     background: none;
     color: var(--dogBrown);
-
 }
 
 main .home-background {
@@ -105,7 +102,6 @@ main .home-background {
 }
 
 main .home .home-question {
-    /* font-size: 2rem; */
     background: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -113,11 +109,6 @@ main .home .home-question {
 }
 
 /* color boton main */
-.home-div button {
-    color: var(--lightIvory);
-    font-size: 1.5rem;
-}
-
 main .home .home-div button {
     cursor: pointer;
     border: none;
@@ -125,14 +116,9 @@ main .home .home-div button {
     border-radius: 1rem;
     width: 20rem;
     height: 4rem;
+    color: var(--lightIvory);
     background-color: var(--pigPink);
-}
-
-main .home .home-div .home-create-account {
-    margin-top: 3rem;
-    font-size: 1.9rem;
-    color: var(var(--lightIvory));
-    font-weight: 500;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 /* email/Facebook LogIn */
@@ -151,10 +137,6 @@ main .email-facebook-page .email-facebook-div label {
 
 /* boton email/facebook*/
 main .email-facebook-page .email-facebook-div button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     background: none;
     cursor: pointer;
     font-size: 2rem;
@@ -162,71 +144,21 @@ main .email-facebook-page .email-facebook-div button {
     width: 40rem;
     height: 5rem;
     background-color: var(--pigPink);
+    color: var(--lightIvory);
     border: none;
     padding: 1.2rem;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 main .email-facebook-page .email-facebook-div .email-btn {
-    color: var(--lightIvory);
     margin-top: 5rem;
     font-size: 1.9rem;
-
 }
 
 main .email-facebook-page .email-facebook-div .facebook-btn {
-    color: var(--lightIvory);
     margin-top: 2rem;
     background-color: var(--blue);
     font-size: 1.9rem;
-
-}
-
-/* log in form */
-main .login-section .login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-}
-
-main .login-section .login-form input {
-    outline: none;
-    background: none;
-    border: none;
-    font-size: 2.5rem;
-    text-indent: 1rem;
-    margin-top: 0.5rem;
-    color: var(--dogBrown);
-    font-family: 'Merriweather', serif;
-}
-
-main .login-section .login-form label {
-    font-size: 2rem;
-}
-
-main .login-section .login-form .login-form-email {
-    font-size: 2rem;
-    margin-top: 9rem;
-}
-
-main .login-section .login-form .login-form-password {
-    font-size: 2rem;
-    margin-top: 0.5rem;
-}
-
-/* boton */
-main .login-section .login-form button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: none;
-    cursor: pointer;
-    border: 1px solid #000000;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-    width: 13rem;
-    margin-top: 1rem;
 }
 
 /* Register section */
@@ -234,6 +166,7 @@ main .register .register-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5rem;
 }
 
 main .register .register-form label {
@@ -241,7 +174,7 @@ main .register .register-form label {
     margin-top: 1rem;
 }
 
-main .background {
+main .register .register-form label .register-form-background {
     margin-top: 5rem;
     background-color: var(--fairIvory);
     height: 30%;
@@ -276,28 +209,25 @@ main .register .register-form input {
     background: none;
     border: none;
     border-bottom: 2px solid black;
-    /* font-size: 2rem; */
     text-indent: 1rem;
     margin-top: 1.5rem;
     color: var(--dogBrown);
     font-family: Arial, Helvetica, sans-serif;
     font: 2em sans-serif;
-    /* width: 60rem;
-    height: 5rem; */
 }
 
 main .register .register-form button {
     background: none;
     cursor: pointer;
-    border: none;
-    font-size: 1.9rem;
-    margin-top: 3rem;
-    color: var(--lightIvory);
+    font-size: 2rem;
     border-radius: 1rem;
-    width: 20rem;
-    height: 4rem;
+    width: 25rem;
+    height: 5rem;
     background-color: var(--pigPink);
-
+    color: var(--lightIvory);
+    border: none;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    margin-top: 5rem;
 }
 
 /* auth error */
@@ -329,46 +259,21 @@ main .auth-funciona .auth-error-div .auth-funciona-text {
 main .auth-funciona .auth-error-div .email-confirmation-done-btn {
     background: none;
     cursor: pointer;
-    border: none;
-    font-size: 1.9rem;
-    margin-top: 1.5rem;
-    color: var(--lightIvory);
+    font-size: 2rem;
     border-radius: 1rem;
-    width: 20rem;
-    height: 4rem;
+    width: 25rem;
+    height: 5rem;
     background-color: var(--pigPink);
+    color: var(--lightIvory);
+    border: none;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
-/* Log In/Sign Up */
-main .log-in-sign-up .log-in-sign-up-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-main .log-in-sign-up .log-in-sign-up-div button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: none;
-    cursor: pointer;
-    border: 1px solid #000000;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-    width: 13rem;
-}
-
-main .log-in-sign-up .log-in-sign-up-div .nav-link-log-in {
-    margin-top: 16rem;
-}
-
-main .log-in-sign-up .log-in-sign-up-div .nav-link-sign-up {
-    margin-top: 1rem;
-}
-
+/* Email-login.js */
 main .Email-login {
     margin: 18%;
-
 }
 
 main .Email-login .Email-login-form .Email-login-form-background {
@@ -378,7 +283,6 @@ main .Email-login .Email-login-form .Email-login-form-background {
     background-color: var(--fairIvory);
     padding: 3em;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-
 }
 
 main .Email-login .Email-login-form .Email-login-form-background input {
@@ -386,13 +290,11 @@ main .Email-login .Email-login-form .Email-login-form-background input {
     background: none;
     border: none;
     border-bottom: 2px solid black;
-    /* font-size: 2rem; */
     text-indent: 1rem;
     margin-top: 1.5rem;
     color: var(--dogBrown);
     font-family: Arial, Helvetica, sans-serif;
     font: 2em sans-serif;
-
 }
 
 main .Email-login .Email-login-form .Email-login-form-background .email-login-click-div-btn {
@@ -402,41 +304,81 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-cl
     font-size: 1.5rem;
     color: var(--blue);
     text-decoration-line: underline;
-
 }
 
 main .Email-login .Email-login-form .Email-login-form-background p {
-
     display: block;
     background: none;
     font-size: 1.5rem;
     margin-top: 1rem;
     color: var(--blue);
-
-
 }
 
 main .Email-login .Email-login-form .Email-login-form-background .email-login-forget-psw-a {
     background: none;
 }
 
-
-
 main .Email-login .Email-login-form .Email-login-form-background .email-login-div-btn {
     background: none;
     cursor: pointer;
-    border: none;
-    font-size: 1.9rem;
-    margin-top: 3rem;
-    color: var(--lightIvory);
+    font-size: 2rem;
     border-radius: 1rem;
-    width: 20rem;
-    height: 4rem;
+    width: 40rem;
+    height: 5rem;
     background-color: var(--pigPink);
+    color: var(--lightIvory);
+    border: none;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-
+    margin-top: 2rem;
 }
 
+/* recoverpsw.js */
+main .recover-psw{
+    width: 75%;
+}
+
+main .recover-psw .recover-psw-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin: 18%;
+}
+
+main .recover-psw .recover-psw-form .recover-psw-form-background{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--fairIvory);
+    padding: 3em;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+main .recover-psw .recover-psw-form .recover-psw-form-background input{
+    outline: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 2.5rem;
+    text-indent: 1rem;
+    margin-top: 0.5rem;
+    color: var(--dogBrown);
+    font-family: 'Merriweather', serif;
+}
+
+main .recover-psw .recover-psw-form .recover-psw-form-background button{
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 1rem;
+    width: 25rem;
+    height: 4rem;
+    background-color: var(--pigPink);
+    color: var(--lightIvory);
+    border: none;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
 
 /* responsive */
 /* 1rem=16px  16x5=80px */
@@ -467,6 +409,14 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         font-size: 1.5rem;
     }
 
+    main .home .home-div button {
+        width: 15rem;
+        height: 2.5rem;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+    }
+
     main .email-facebook-page .email-facebook-div button {
         width: 25rem;
         height: 4rem;
@@ -488,6 +438,20 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         align-items: center;
         background-color: var(--fairIvory);
         padding: 3em;
+    }
+
+    main .register .register-form button {
+        width: 15rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
+    }
+
+    main .auth-funciona .auth-error-div .email-confirmation-done-btn {
+        width: 15rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
     }
 
     ::placeholder {
@@ -512,7 +476,6 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         align-items: center;
         background-color: var(--fairIvory);
         padding: 3em;
-
     }
 
     main .Email-login .Email-login-form .Email-login-form-background input {
@@ -520,7 +483,6 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         height: 3rem;
         border-bottom: 2px solid black;
         font-size: 1rem;
-
     }
 
     main .Email-login .Email-login-form .Email-login-form-background p {
@@ -538,6 +500,41 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
     main .Email-login .Email-login-form .Email-login-form-background .email-login-forget-psw-a .email-login-click-div-btn {
         font-size: 1rem;
     }
+
+    /* recoverpsw.js */
+    main .recover-psw{
+        width: 100%;
+        margin-top: 3rem;
+    }
+
+    main .recover-psw .recover-psw-form{
+        margin: 2%;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background{
+        width: 25em;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background input{
+        width: 20rem;
+        height: 3rem;
+        font-size: 1rem;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background button{
+        width: 15rem;
+        height: 2.5rem;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background .reset-recover-psw-div-btn{
+        margin-top: 3rem;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background .cancel-recover-psw-div-btn{
+        margin-top: 1rem;
+    }
 }
 
 /* 30rem = 480 px */
@@ -554,6 +551,13 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         font-size: 1.9rem;
     }
 
+    main .home .home-div button {
+        width: 18rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        font-size: 1.7rem;
+    }
+
     main .register .register-form input {
         width: 30rem;
         height: 3rem;
@@ -563,6 +567,20 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
 
     main .register-form-background {
         width: 70%;
+    }
+
+    main .register .register-form button {
+        width: 18rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        font-size: 1.9rem;
+    }
+
+    main .auth-funciona .auth-error-div .email-confirmation-done-btn {
+        width: 18rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        font-size: 1.9rem;
     }
 
     main .Email-login {
@@ -601,33 +619,38 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         font-size: 2rem;
     }
 
-    /* main .Email-login .Email-login-form .Email-login-form-background {
-        width: 30em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--fairIvory);
-        padding: 3em;
-
-    } */
-/* 
-    main .Email-login .Email-login-form .Email-login-form-background input {
-        width: 20rem;
-        height: 3rem;
-        border-bottom: 2px solid black;
-
-    } */
-
     main .Email-login .Email-login-form .Email-login-form-background .email-login-div-btn {
         width: 15rem;
         height: 3rem;
         border-radius: 0.8rem;
-        font-size: 1.3rem;
+        font-size: 1.9rem;
     } 
 
-    /* main .Email-login .Email-login-form .Email-login-form-background .email-login-forget-psw-a .email-login-click-div-btn {
-        font-size: 1rem;
-    } */
+    /* recoverpsw.js */
+    main .recover-psw{
+        width: 100%;
+        margin-top: 3rem;
+    }
+
+    main .recover-psw .recover-psw-form{
+        margin: 2%;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background{
+        width: 70%;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background input{
+        width: 30rem;
+        font-size: 2rem;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background button{
+        width: 18rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        font-size: 1.7rem;
+    }
 }
 
 
@@ -652,9 +675,12 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
 
     main .home .home-div button {
         width: 25rem;
-        height: 4rem;
-        border-radius: 0.8rem;
-        font-size: 1.4rem;
+        height: 3rem;
+        font-size: 2rem;
+    }
+
+    main .home .home-div .home-create-account{
+        margin-top: 1.5rem;
     }
 
     main .register .register-form input {
@@ -668,30 +694,26 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         width: 70%;
     }
 
-    
+    main .register .register-form button {
+        width: 25rem;
+        height: 4rem;
+        border-radius: 0.8rem;
+        font-size: 1.9rem;
+    }
+
+    main .auth-funciona .auth-error-div .email-confirmation-done-btn {
+        width: 25rem;
+        height: 4rem;
+        border-radius: 0.8rem;
+        font-size: 1.9rem;
+    }
+
     ::placeholder {
         font-size: 2rem;
     }
 
-
-    /* main .Email-login {
-        width: 100%;
-        margin: 3%;
-    } */
-
-    /* main .Email-login .Email-login-form {
-        font-size: 1rem;
-        font-style: italic;
-    } */
-
     main .Email-login .Email-login-form .Email-login-form-background {
         width: 100%;
-        /* display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--fairIvory);
-        padding: 3em; */
-
     }
 
     main .Email-login .Email-login-form .Email-login-form-background input {
@@ -710,13 +732,31 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         width: 25rem;
         height: 4rem;
         border-radius: 0.8rem;
-        font-size: 1.4rem;
+        font-size: 1.9rem;
     }
 
     main .Email-login .Email-login-form .Email-login-form-background .email-login-forget-psw-a .email-login-click-div-btn {
         font-size: 1.5rem;
     }
 
+    /* recoverpsw.js */
+    main .recover-psw{
+        margin-top: 4rem;
+    }
+
+    main .recover-psw .recover-psw-form{
+        margin: 2%;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background{
+        width: 35em;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background input{
+        width: 30rem;
+        height: 3rem;
+        font-size: 2rem;
+    }
 }
 
 /* 62rem = 992px */
@@ -730,8 +770,28 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         margin-left: 20%;
     }
 
+    main .home .home-div button {
+        width: 25rem;
+        height: 3rem;
+        font-size: 2rem;
+    }
+
     main .register-form-background {
         width: 70%;
+    }
+
+    main .register .register-form button {
+        width: 23rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        font-size: 1.9rem;
+    }
+
+    main .auth-funciona .auth-error-div .email-confirmation-done-btn {
+        width: 23rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        font-size: 1.9rem;
     }
 
     main .home .home-div .home-create-account-intro {
@@ -747,13 +807,39 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         height: 3rem;
         border-bottom: 2px solid black;
     }
+
+    /* recoverpsw.js */
+    main .recover-psw{
+        margin-top: 5rem;
+    }
+
+    main .recover-psw .recover-psw-form{
+        margin: 2%;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background{
+        width: 55em;
+        height: 20em;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background input{
+        width: 50rem;
+        height: 3rem;
+        font-size: 2.5rem;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background button{
+        width: 23rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        font-size: 1.9rem;
+    }
 }
 
 /* 87rem = 1392px */
 @media screen and (min-width: 87rem) {
     main .main-logo-img {
         width: 57%;
-
     }
 
     main .register-form-background {
@@ -774,37 +860,39 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
         margin-top: 20em;
     }
 
+    main .home .home-div button {
+        width: 22rem;
+        height: 3rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+    }
+
     main .register .register-form input {
         width: 65rem;
         height: 3rem;
         border-bottom: 2px solid black;
     }
 
-    
-    
+    main .register .register-form button {
+        width: 22rem;
+        height: 3rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+    }
+
+    main .auth-funciona .auth-error-div .email-confirmation-done-btn {
+        width: 22rem;
+        height: 3rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+    }
+
     ::placeholder {
         font-size: 3rem;
     }
 
-
-    /* main .Email-login {
-        width: 100%;
-        margin: 3%;
-    } */
-
-    /* main .Email-login .Email-login-form {
-        font-size: 1rem;
-        font-style: italic;
-    } */
-
     main .Email-login .Email-login-form .Email-login-form-background {
         width: 100%;
-        /* display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--fairIvory);
-        padding: 3em; */
-
     }
 
     main .Email-login .Email-login-form .Email-login-form-background input {
@@ -821,14 +909,39 @@ main .Email-login .Email-login-form .Email-login-form-background .email-login-di
     }
 
     main .Email-login .Email-login-form .Email-login-form-background .email-login-div-btn {
-        width: 25rem;
-        height: 5rem;
+        width: 22rem;
+        height: 3rem;
         border-radius: 0.8rem;
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     main .Email-login .Email-login-form .Email-login-form-background .email-login-forget-psw-a .email-login-click-div-btn {
         font-size: 2rem;
     }
 
+    /* recoverpsw.js */
+    main .recover-psw{
+        margin-top: 7rem;
+    }
+
+    main .recover-psw .recover-psw-form{
+        margin: 2%;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background{
+        width: 70em;
+        height: 30em;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background input{
+        margin-top: 4rem;
+        font-size: 3rem;
+    }
+
+    main .recover-psw .recover-psw-form .recover-psw-form-background button{
+        width: 22rem;
+        height: 3rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+    }
 }
