@@ -1,8 +1,14 @@
 import { onNavigate } from '../main.js';
+import { signInAccount } from '../app/signIn.js'
 
 export const EmailLogin = () => {
     const EmailLoginDiv = document.createElement('div');
     const template = `
+        <section class="main-logo" id="mainLogo">
+            <div class="main-logo-div">
+            <img src="./Assets/logo.png"  alt="logo" class="main-logo-img" id="mainLogoImg" >
+            </div>
+        </section>
         <section class="Email-login" id="EmailLogin">
             <form class="Email-login-form" id="EmailLoginForm">
                 <div class="Email-login-form-background">
@@ -19,7 +25,16 @@ export const EmailLogin = () => {
         </section>                
     `
     EmailLoginDiv.innerHTML = template
-    //EmailLoginDiv.querySelector('#emailLoginDivBtn').addEventListener('click', () => onNavigate('/feed'))
+    EmailLoginDiv.querySelector('#emailLoginDivBtn').addEventListener('click', async (e)=>{
+        e.preventDefault();
+        const EmailLoginForm = document.getElementById('EmailLoginForm')
+        try {
+            await signInAccount(EmailLoginForm)
+            onNavigate('/feed')
+        } catch (error) {
+            console.log({error})
+        }
+    })
     EmailLoginDiv.querySelector('#emailLoginClickDivBtn').addEventListener('click', () => onNavigate('/recoverpsw'))
     
     return EmailLoginDiv;
