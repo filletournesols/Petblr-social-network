@@ -38,9 +38,16 @@ const collectionUserNamesSpanish = collection(database, 'usuarios');
 const collectionPost = collection(database, 'posts');
 
 // Guardar username desde el registro
-const saveDisplayName = (usernameIngresado) => {
-  return updateProfile(firebaseAuth.currentUser, {displayName: usernameIngresado})
-};
+// const saveDisplayName = (usernameIngresado) => {
+//   return updateProfile(firebaseAuth.currentUser, {displayName: usernameIngresado})
+// };
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore()
+
+export const saveTask = (title, description) =>  
+addDoc(collection(db , 'tasks'), {title, description });
 
 export {
   firebaseApp, firebaseAuth, createUserWithEmailAndPassword,
