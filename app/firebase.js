@@ -1,16 +1,14 @@
 /* eslint-disable import/no-unresolved */
-// como utilizamos CDN, en lugar de utilizar "from "firebase/auth"" se utiliza el link
-// https://firebase.google.com/docs/web/learn-more#available-libraries
-// link que lleva al link anterior
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js';
 import {
   getAuth, createUserWithEmailAndPassword, FacebookAuthProvider, signInWithPopup,
   setPersistence, signInWithRedirect, inMemoryPersistence, GoogleAuthProvider,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword, signOut, sendPasswordResetEmail, sendEmailVerification
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
-
+import { getFirestore, collection, getDoc, getDocs, setDoc, doc,
+  onSnapshot, query, where, deleteDoc, updateDoc, arrayRemove, arrayUnion
+} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
+import { getStorage, ref } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js'
 
 // configuración de la app de firebase
 const firebaseConfig = {
@@ -28,13 +26,30 @@ const firebaseApp = initializeApp(firebaseConfig);
 // uso de firebase auth
 const firebaseAuth = getAuth(firebaseApp);
 
-const auth = getAuth();
-
 const providerFacebookAuth = new FacebookAuthProvider();
+
+// NUUUUUUUUUUUEEEEEEEEEEEEEEEVOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+const storage = getStorage(firebaseApp);
+const database = getFirestore();
+const storageRef = ref(storage);
+const collectionUserName = collection(database, 'usernames');
+const collectionUserNamesSpanish = collection(database, 'usuarios');
+const collectionPost = collection(database, 'posts');
+
+// Guardar username desde el registro
+// const saveDisplayName = (usernameIngresado) => {
+//   return updateProfile(firebaseAuth.currentUser, {displayName: usernameIngresado})
+// };
 
 export {
   firebaseApp, firebaseAuth, createUserWithEmailAndPassword,
+  sendPasswordResetEmail, sendEmailVerification,
   providerFacebookAuth, signInWithPopup, getAuth, FacebookAuthProvider,
   setPersistence, signInWithRedirect, inMemoryPersistence, GoogleAuthProvider,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword, signOut, getFirestore, collection, getDoc,
+  getDocs, setDoc, doc, onSnapshot, query, where, deleteDoc,
+  updateDoc, arrayRemove, arrayUnion, getStorage, ref,
+  storage, database, storageRef, collectionUserName, collectionUserNamesSpanish,
+  collectionPost, saveDisplayName
 };
