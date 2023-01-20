@@ -1,35 +1,12 @@
-import { database, addDoc, getTask, onSnapshot } from './firebase.js';
+import { getDoc, doc, database, firebaseAuth } from './firebase.js';
 
-const saveTask = (title, description) => {
-  return addDoc(collection(database , 'tasks'), {title, description })
-};
+// obtener datos
+// const getPostData = (uid) => {
+//     getDoc(doc(database, 'usuarios', firebaseAuth.currentUser.uid))
+// };
+// const getPostData2 = (uid) => {
+//     getDoc(doc(database, 'usuarios', firebaseAuth.currentUser.uid, 'userPosts', uid))
+// };
+//   // https://firebase.google.com/docs/firestore/query-data/get-data#get_a_document
 
-const taskForm = document.getElementById("taskForm")
-const taskContainer = document.getElementById('taskContainer')
-
-window.addEventListener("DOMContentLoaded", async () => {
-  const querySnapshot = await getTask()
-  onSnapshot(collection (database, 'task'),(querySnapshot) => {
-    let html = '';
-    querySnapshot.forEach((doc) => {
-      const task = doc.data();
-      html += `
-      <div>
-      <h3>${task.title}</h3>
-      <p>${task.description}</p>
-      </div>
-      `;
-    });
-    taskContainer.innerHTML = html;
-  });
-
-  taskForm.addEventListener ('submit', (e) => {
-    e.preventDefault()
-    const description = taskForm["postsTextArea"]
-
-    console.log(description)
-
-    saveTask(description.value)
-    taskForm.reset()
-  })
-})
+// export { getPostData, getPostData2 }

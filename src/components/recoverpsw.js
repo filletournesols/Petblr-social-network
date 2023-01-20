@@ -1,5 +1,6 @@
 import { onNavigate } from '../main.js';
 import { pswReset } from '../app/PswReset.js';
+import { firebaseAuth } from '../app/firebase.js';
 
 export const RecoverPsw = () => {
     const RecoverPswDiv = document.createElement('div');
@@ -29,9 +30,9 @@ export const RecoverPsw = () => {
     
     RecoverPswDiv.querySelector('#resetRecoverPswDivBtn').addEventListener('click', async (e)=>{
         e.preventDefault();
-        const RecoverPswForm = document.getElementById('RecoverPswForm')
+        const email = document.getElementById('RecoverPswFormInput').value
         try {
-            await pswReset(RecoverPswForm)  
+            await pswReset(firebaseAuth, email)  
             //aquí va el mensaje de correo de verificación enviado
             document.getElementById('authFunciona').classList.remove('hidden')  
 

@@ -30,15 +30,14 @@ export const Feed = () => {
         <button class="create-post-button" id="createPostButton">CREAR PUBLICACIÓN</button>
     </section>
     <section class="posts" id="posts">
-        <form id="taskForm">
-            <label for="user">Usuario</label>
-            <textarea class="posts-div-p" id="postsTextArea" rows="3" placeholder="PUBLICACIÓN"></textarea>
-            <button class="create-post-button" id="createPostBtn">Publicar</button>
-        </form>
+        <div class="posts-background" id="postsBackground">
+            <label>Post:</label>
+            <textarea class="posts-div-p" id="postsTextArea" placeholder="PUBLICACIÓN"></textarea>
+            <button class="create-post-button">Publicar</button>
+        </div>
     </section>
     <section class="btn-posts" id="btnPosts">
         <div class="posts-div-btns" id="postsDivBtns">
-            <div id="taskContainer"></div>
             <button class="paw-posts-div-btns"><img src="../Assets/pata-blanca.png"  alt="white_paw" class="paw-img" id="pawPostsDivBtns" ></button>
             <button class="edit-posts-div-btns" id="editPostsDivBtns">Editar</button>
         </div>
@@ -74,16 +73,3 @@ export const Feed = () => {
 
     return FeedDiv;
 }
-
-/*
-<div class="posts-background" id="postsBackground">
-    <label>Post:</label>
-    <textarea class="posts-div-p" id="postsTextArea" placeholder="PUBLICACIÓN"></textarea>
-    <button class="create-post-button">Publicar</button>
-</div>
-*/
-
-/*
-<label for="title">Title</label>
-<input type="text" placeholder="task title" id="taskTitle">
-*/

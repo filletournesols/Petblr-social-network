@@ -39,9 +39,11 @@ export const Signup = () => {
     SignupDiv.innerHTML = template 
     SignupDiv.querySelector('#registerDivBtn').addEventListener('click', async (e) => {
         e.preventDefault();
-        const registerForm = document.getElementById('registerForm');
+        const email = document.getElementById('registerFormPetEmailInput').value;
+        const psw = document.getElementById('registerFormPasswordInput').value;
+        const repeatPsw = document.getElementById('registerFormRepeatPasswordInput').value;
         try {
-            await registrar(registerForm)
+            await registrar(email, psw, repeatPsw)
             document.getElementById('registerFormRepeatPsw').classList.add('hidden');
             document.getElementById('registerFormRepeatPasswordInput').classList.remove('wrongAlert');
             document.getElementById('authFunciona').classList.remove('hidden')
