@@ -12,25 +12,25 @@ const taskContainer = document.getElementById('postsContainer')
 //   getDocs(collection(database , 'posts'))
 // }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const querySnapshot = await getDocs(collection(database, "posts"));
-  let html =''
+// document.addEventListener("DOMContentLoaded", async () => {
+//   const querySnapshot = await getDocs(collection(database, "posts"));
+//   let html =''
 
-  querySnapshot.forEach((doc) => {
-    //const posts =posts.database()
-    html += `¨
-            <di>
-                <h3>${posts.database}</h3>
-            </di>`
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
-    console.log(postsContainer)
-  })
-  // vamos a mostrar el contenido de los posts en html
+//   querySnapshot.forEach((doc) => {
+//     //const posts =posts.database()
+//     html += `¨
+//             <di>
+//                 <h3>${posts.database}</h3>
+//             </di>`
+//     // doc.data() is never undefined for query doc snapshots
+//     console.log(doc.id, " => ", doc.data());
+//     // console.log(postsContainer)
+//   })
+//   // vamos a mostrar el contenido de los posts en html
  
-   postsContainer.innerHTML= ''
+//   //  postsContainer.innerHTML= ''
    
-})
+// })
 
 
 

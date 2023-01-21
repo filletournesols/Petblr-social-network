@@ -71,16 +71,16 @@ export const Feed = () => {
     
     const taskForm = FeedDiv.querySelector('.task-form')
     taskForm.addEventListener ('submit', (e) => {
-       e.preventDefault();
-       if (stateEdit != false) {
-        const descriptio = taskForm["postsTextArea"]
-        saveTask(descriptio.value)
-       } else {
-        updatePosts(id, {description:descriptio.value});
-        stateEdit = false;
-        id = '';
-        console.log ("ayuda1500")
-    }
+        e.preventDefault();
+        if (stateEdit != false) {
+         const descriptio = taskForm["postsTextArea"]
+         saveTask(descriptio.value)
+        } else {
+         updatePosts(id, {description:descriptio.value});
+         stateEdit = false;
+         id = '';
+         console.log ("ayuda1500")
+     }
        
        taskForm.reset();
     })
