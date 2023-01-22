@@ -40,13 +40,14 @@ const collectionPost = collection(database, 'posts');
 const getTask = () => getDocs(collection(database, 'posts'));
 
 
+
 const getOnDatas = (callback) => {
   const orderQuery = query(collection(database,'posts'));
   onSnapshot(orderQuery,(callback))};
 
 const getPost = (id) => getDoc(doc(database, 'posts', id));
 const updatePosts = (id, newFields) =>
-  updateDoc(doc(database, "posts", id), newFields);
+  updateDoc(doc(database, 'posts', id), newFields);
 
  const erasePost = (id) => deleteDoc(doc(database, 'posts', id))
 

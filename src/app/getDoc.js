@@ -1,16 +1,16 @@
 import { database, addDoc, collection, getDocs } from './firebase.js';
 
 const saveTask = (description) => {
-  return addDoc(collection(database , 'posts'), {description })
+  return addDoc(collection(database , 'posts'), {description});
 
 };
 
 // const taskForm = document.getElementById("taskForm") Buscando poder organizar las vistas de los post y poderla mostrar
-const taskContainer = document.getElementById('postsContainer')
+// const taskContainer = document.getElementById('postsContainer')
 
-// const getPosts = ( ) => {
-//   getDocs(collection(database , 'posts'))
-// }
+// // const getPosts = ( ) => {
+// //   getDocs(collection(database , 'posts'))
+// // }
 
 // document.addEventListener("DOMContentLoaded", async () => {
 //   const querySnapshot = await getDocs(collection(database, "posts"));
@@ -24,23 +24,23 @@ const taskContainer = document.getElementById('postsContainer')
 //             </di>`
 //     // doc.data() is never undefined for query doc snapshots
 //     console.log(doc.id, " => ", doc.data());
-//     // console.log(postsContainer)
+//     console.log(postsContainer)
 //   })
 //   // vamos a mostrar el contenido de los posts en html
  
-//   //  postsContainer.innerHTML= ''
+//    taskContainer.innerHTML= ''
    
 // })
 
 
 
 
-  //   console.log(description)
+//   //   console.log(description)
 
-  //   saveTask(description.value)
-  //   taskForm.reset()
-  // })
-// })
+//   //   saveTask(description.value)
+//   //   taskForm.reset()
+//   // })
+// // })
 
 export { saveTask } 
 
