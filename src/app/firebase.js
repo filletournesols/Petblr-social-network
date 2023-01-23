@@ -6,8 +6,8 @@ import {
   signInWithEmailAndPassword, signOut, sendPasswordResetEmail, sendEmailVerification
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { getFirestore, collection, getDoc, getDocs, setDoc, doc,
-  onSnapshot, query, where, deleteDoc, updateDoc, arrayRemove, arrayUnion
-} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
+  onSnapshot, query, where, deleteDoc, updateDoc, arrayRemove, arrayUnion,
+  addDoc } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
 import { getStorage, ref } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js'
 
 // configuración de la app de firebase
@@ -36,11 +36,26 @@ const storageRef = ref(storage);
 const collectionUserName = collection(database, 'usernames');
 const collectionUserNamesSpanish = collection(database, 'usuarios');
 const collectionPost = collection(database, 'posts');
+const getTask = () => getDocs(collection(database, 'posts'));
+
+
+
+const getOnDatas = (callback) => {
+  const orderQuery = query(collection(database,'posts'));
+  onSnapshot(orderQuery,(callback))};
+
+const getPost = (id) => getDoc(doc(database, 'posts', id));
+const updatePosts = (id, newFields) =>
+  updateDoc(doc(database, 'posts', id), newFields);
+
+ const erasePost = (id) => deleteDoc(doc(database, 'posts', id))
 
 // Guardar username desde el registro
 // const saveDisplayName = (usernameIngresado) => {
 //   return updateProfile(firebaseAuth.currentUser, {displayName: usernameIngresado})
 // };
+
+
 
 export {
   firebaseApp, firebaseAuth, createUserWithEmailAndPassword,
@@ -51,5 +66,5 @@ export {
   getDocs, setDoc, doc, onSnapshot, query, where, deleteDoc,
   updateDoc, arrayRemove, arrayUnion, getStorage, ref,
   storage, database, storageRef, collectionUserName, collectionUserNamesSpanish,
-  collectionPost
+  collectionPost, addDoc, getTask, getOnDatas,getPost, updatePosts, erasePost 
 };
