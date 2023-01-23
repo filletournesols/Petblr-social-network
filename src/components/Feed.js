@@ -1,6 +1,6 @@
 import { signOutFun } from '../app/signOut.js';
 import { onNavigate } from '../main.js';
-import { firebaseAuth, getDoc, getOnDatas, getPost, updatePosts, erasePost } from '../app/firebase.js';
+import { firebaseAuth, getOnDatas, getPost, updatePosts, erasePost } from '../app/firebase.js';
 import { saveTask } from '../app/getDoc.js';
 
 export const Feed = () => {
@@ -98,9 +98,7 @@ export const Feed = () => {
             <button class="delete-posts-div-btns"><img src="../Assets/delete-trash.png" alt="delete-trash" class="delete-img" id="deletePostsDivBtns" data-id="${postsContent.id}"></button>
             </div>
             </section>
-            `
-
-            // console.log("bandera123015", postsContent.id)
+            `            
         })
 
         const btnEditDiv = FeedDiv.querySelectorAll(".edit-posts-div-btns")
@@ -113,15 +111,16 @@ export const Feed = () => {
                     stateEdit = true
                     id = getId.id
                     forTextArea.value = post.description
-                } catch (error) { console.log("quiero llorar", error) }
+                } catch (error) { 
+                    return error
+                }
             });
         })
 
         const eraseBTn = FeedDiv.querySelectorAll(".delete-posts-div-btns");
         eraseBTn.forEach((btn) => {
             btn.addEventListener('click', ({ target: { dataset } }) => {
-                erasePost(dataset.id)
-                console.log("quiero llorar por el boton de eliminar",)
+                erasePost(dataset.id)                
             })
         });
     })
