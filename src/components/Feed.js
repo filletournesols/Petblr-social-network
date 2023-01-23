@@ -1,6 +1,6 @@
 import { signOutFun } from '../app/signOut.js';
 import { onNavigate } from '../main.js';
-import { firebaseAuth, getDoc, getOnDatas, getPost, updatePosts, erasePost } from '../app/firebase.js';
+import { firebaseAuth, getOnDatas, getPost, updatePosts, erasePost } from '../app/firebase.js';
 import { saveTask } from '../app/getDoc.js';
 
 export const Feed = () => {
@@ -35,7 +35,6 @@ export const Feed = () => {
         </form>
     </section>
     <div id="postsContainer">
-    
     </div>
     `
     FeedDiv.innerHTML = template
@@ -70,14 +69,11 @@ export const Feed = () => {
         e.preventDefault();
         if (!stateEdit) {
             saveTask(posts.value)
-            console.log('Esto es publicar')
         } else {
             updatePosts(id, { description: posts.value })
             stateEdit = false
             id = ''
-            console.log('esto es editar')
         }
-
         taskForm.reset();
     })
 
@@ -86,7 +82,6 @@ export const Feed = () => {
         listasPosts.forEach((postsContent) => {
             const lista = postsContent.data();
             postsContainer.innerHTML += `
-        
             <section class="posts" id="posts">
             <div class="posts-publication">
             <h3>${lista.description}</h3>
@@ -99,8 +94,6 @@ export const Feed = () => {
             </div>
             </section>
             `
-
-            // console.log("bandera123015", postsContent.id)
         })
 
         const btnEditDiv = FeedDiv.querySelectorAll(".edit-posts-div-btns")
@@ -113,7 +106,9 @@ export const Feed = () => {
                     stateEdit = true
                     id = getId.id
                     forTextArea.value = post.description
-                } catch (error) { console.log("quiero llorar", error) }
+                } catch (error) { 
+                    return error
+                }
             });
         })
 
@@ -121,7 +116,6 @@ export const Feed = () => {
         eraseBTn.forEach((btn) => {
             btn.addEventListener('click', ({ target: { dataset } }) => {
                 erasePost(dataset.id)
-                console.log("quiero llorar por el boton de eliminar",)
             })
         });
     })
