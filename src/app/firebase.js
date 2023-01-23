@@ -3,11 +3,12 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.15.0/firebas
 import {
   getAuth, createUserWithEmailAndPassword, FacebookAuthProvider, signInWithPopup,
   setPersistence, signInWithRedirect, inMemoryPersistence, GoogleAuthProvider,
-  signInWithEmailAndPassword, signOut, sendPasswordResetEmail, sendEmailVerification
+  signInWithEmailAndPassword, signOut, sendPasswordResetEmail, sendEmailVerification,
+  onAuthStateChanged, updateProfile
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { getFirestore, collection, getDoc, getDocs, setDoc, doc,
   onSnapshot, query, where, deleteDoc, updateDoc, arrayRemove, arrayUnion,
-  addDoc } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
+  addDoc, serverTimestamp, orderBy } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
 import { getStorage, ref } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js'
 
 // configuración de la app de firebase
@@ -38,17 +39,16 @@ const collectionUserNamesSpanish = collection(database, 'usuarios');
 const collectionPost = collection(database, 'posts');
 const getTask = () => getDocs(collection(database, 'posts'));
 
-
-
 const getOnDatas = (callback) => {
-  const orderQuery = query(collection(database,'posts'));
-  onSnapshot(orderQuery,(callback))};
+  const orderQuery = query(collection(database,'posts'), orderBy('createdAt', 'desc'));
+  onSnapshot(orderQuery,(callback))
+};
 
 const getPost = (id) => getDoc(doc(database, 'posts', id));
 const updatePosts = (id, newFields) =>
   updateDoc(doc(database, 'posts', id), newFields);
 
- const erasePost = (id) => deleteDoc(doc(database, 'posts', id))
+const erasePost = (id) => deleteDoc(doc(database, 'posts', id))
 
 // Guardar username desde el registro
 // const saveDisplayName = (usernameIngresado) => {
@@ -66,5 +66,6 @@ export {
   getDocs, setDoc, doc, onSnapshot, query, where, deleteDoc,
   updateDoc, arrayRemove, arrayUnion, getStorage, ref,
   storage, database, storageRef, collectionUserName, collectionUserNamesSpanish,
-  collectionPost, addDoc, getTask, getOnDatas,getPost, updatePosts, erasePost 
+  collectionPost, addDoc, getTask, getOnDatas,getPost, updatePosts, erasePost,
+  onAuthStateChanged, updateProfile, serverTimestamp
 };
