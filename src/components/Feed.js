@@ -1,7 +1,7 @@
 import { signOutFun } from '../app/signOut.js';
 import { onNavigate } from '../main.js';
 import { firebaseAuth, getOnDatas, getPost, updatePosts, erasePost } from '../app/firebase.js';
-import { saveTask } from '../app/getDoc.js';
+import { saveTask } from '../app/addDoc.js';
 
 export const Feed = () => {
     const FeedDiv = document.createElement('div');
@@ -68,7 +68,10 @@ export const Feed = () => {
     taskForm.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!stateEdit) {
-            saveTask(posts.value)
+            const loggedInUserId = window.localStorage.getItem('loggedInUserId')
+            const userName = firebaseAuth.currentUser.displayName
+            console.log({loggedInUserId})
+            saveTask(posts.value, loggedInUserId, userName)
         } else {
             updatePosts(id, { description: posts.value })
             stateEdit = false
@@ -77,21 +80,31 @@ export const Feed = () => {
         taskForm.reset();
     })
 
+    //Timestamp.fromDate(new Date())
+
     getOnDatas((listasPosts) => {
+        const loggedInUserId = window.localStorage.getItem('loggedInUserId')
         postsContainer.innerHTML = ''
-        listasPosts.forEach((postsContent) => {
-            const lista = postsContent.data();
+        listasPosts.forEach((firebasePost) => {
+            const postData = firebasePost.data();
+            const userBtns = `
+            <button class="edit-posts-div-btns"><img src="../Assets/edit-img.png" alt="edit-icon" class="edit-img" id="editPostsDivBtns" data-id="${firebasePost.id}"></button>
+            <button class="delete-posts-div-btns"><img src="../Assets/delete-trash.png" alt="delete-trash" class="delete-img" id="deletePostsDivBtns" data-id="${firebasePost.id}"></button>`
             postsContainer.innerHTML += `
             <section class="posts" id="posts">
-            <div class="posts-publication">
-            <h3>${lista.description}</h3>
-            </div></section>
-            <section class="btn-posts" id="btnPosts">        
-            <div class="posts-div-btns" id="postsDivBtns">            
-            <button class="paw-posts-div-btns"><img src="../Assets/patita-like.png" alt="white_paw" class="paw-img" id="pawPostsDivBtns" ></button>
-            <button class="edit-posts-div-btns"><img src="../Assets/edit-img.png" alt="edit-icon" class="edit-img" id="editPostsDivBtns" data-id="${postsContent.id}"></button>
-            <button class="delete-posts-div-btns"><img src="../Assets/delete-trash.png" alt="delete-trash" class="delete-img" id="deletePostsDivBtns" data-id="${postsContent.id}"></button>
-            </div>
+                <div>
+                    <label class="user-name" for="user">${postData.authorName}</label>
+                    <label class="date" for="date">Fecha</label>
+                </div>
+                <div class="posts-publication">
+                    <h3>${postData.description}</h3>
+                </div>
+            </section>
+            <section class="btn-posts" id="btnPosts">    
+                <div class="posts-div-btns" id="postsDivBtns">            
+                    <button class="paw-posts-div-btns"><img src="../Assets/patita-like.png" alt="white_paw" class="paw-img" id="pawPostsDivBtns" ></button>
+                    ${loggedInUserId === postData.authorId ? userBtns : ''}
+                </div>
             </section>
             `
         })

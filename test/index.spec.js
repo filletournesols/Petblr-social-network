@@ -31,7 +31,7 @@
             sendEmailVerification: jest.fn((auth)=>{
                 if (!auth) return Promise.reject()
             })
-        }   
+        }
     })
 
     describe('Test for the login function',()=> {
