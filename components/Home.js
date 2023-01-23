@@ -1,4 +1,5 @@
 import { onNavigate } from '../main.js';
+import '../app/onAuthStateChanged.js'
 
 //creamos la función Home que va a contener una variable que será un div que será el resultado que vamos a devolver
 export const Home = () => {

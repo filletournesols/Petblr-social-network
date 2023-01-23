@@ -1,7 +1,7 @@
 import { onNavigate } from '../main.js';
 import { signInAccount } from '../app/signIn.js'
 
-export const EmailLogin = (email, password) => {
+export const EmailLogin = () => {
     const EmailLoginDiv = document.createElement('div');
     const template = `
         <section class="main-logo" id="mainLogo">
