@@ -42,13 +42,13 @@ export const Signup = () => {
         const email = document.getElementById('registerFormPetEmailInput').value;
         const psw = document.getElementById('registerFormPasswordInput').value;
         const repeatPsw = document.getElementById('registerFormRepeatPasswordInput').value;
+        const userName = document.getElementById('registerFormPetNameInput').value;
         try {
-            await registrar(email, psw, repeatPsw)
+            const userCredential = await registrar(email, psw, repeatPsw, userName)
+            const user = userCredential.user;
             document.getElementById('registerFormRepeatPsw').classList.add('hidden');
             document.getElementById('registerFormRepeatPasswordInput').classList.remove('wrongAlert');
             document.getElementById('authFunciona').classList.remove('hidden')
-            // const emailCredential = document.getElementById('registerFormPetEmailInput').value
-            // const pswCredential = document.getElementById('registerFormPasswordInput').value
         } catch (error) {
             switch (error) {
                 case "wrong password":

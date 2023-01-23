@@ -1,7 +1,7 @@
 import { signOutFun } from '../app/signOut.js';
 import { onNavigate } from '../main.js';
-import { firebaseAuth, getOnDatas, getPost, updatePosts, erasePost } from '../app/firebase.js';
-import { saveTask } from '../app/getDoc.js';
+import { firebaseAuth, getOnDatas, getPost, updatePosts, erasePost, serverTimestamp } from '../app/firebase.js';
+import { saveTask } from '../app/addDoc.js';
 
 export const Feed = () => {
     const FeedDiv = document.createElement('div');
@@ -29,7 +29,6 @@ export const Feed = () => {
     </section>
     <section class="posts" id="posts">
         <form class="task-form" id="taskForm">
-            <label class="user-name" for="user">Usuario</label>
             <textarea class="posts-div-p" id="postsTextArea" rows="3" placeholder="¿Qué piensas?"></textarea>
             <button class="create-post-btn" id="createPostBtn">PUBLICAR</button>
         </form>
@@ -68,7 +67,12 @@ export const Feed = () => {
     taskForm.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!stateEdit) {
-            saveTask(posts.value)
+            const loggedInUserId = window.localStorage.getItem('loggedInUserId')
+            const userName = firebaseAuth.currentUser.displayName
+            const date = new Date().toLocaleDateString('es-es', {month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'})
+            const createdAt = serverTimestamp()
+            console.log({loggedInUserId})
+            saveTask(posts.value, loggedInUserId, userName, date, createdAt)
         } else {
             updatePosts(id, { description: posts.value })
             stateEdit = false
@@ -77,21 +81,31 @@ export const Feed = () => {
         taskForm.reset();
     })
 
+    //Timestamp.fromDate(new Date())
+
     getOnDatas((listasPosts) => {
+        const loggedInUserId = window.localStorage.getItem('loggedInUserId')
         postsContainer.innerHTML = ''
-        listasPosts.forEach((postsContent) => {
-            const lista = postsContent.data();
+        listasPosts.forEach((firebasePost) => {
+            const postData = firebasePost.data();
+            const userBtns = `
+            <button class="edit-posts-div-btns"><img src="../Assets/edit-img.png" alt="edit-icon" class="edit-img" id="editPostsDivBtns" data-id="${firebasePost.id}"></button>
+            <button class="delete-posts-div-btns"><img src="../Assets/delete-trash.png" alt="delete-trash" class="delete-img" id="deletePostsDivBtns" data-id="${firebasePost.id}"></button>`
             postsContainer.innerHTML += `
             <section class="posts" id="posts">
-            <div class="posts-publication">
-            <h3>${lista.description}</h3>
-            </div></section>
-            <section class="btn-posts" id="btnPosts">        
-            <div class="posts-div-btns" id="postsDivBtns">            
-            <button class="paw-posts-div-btns"><img src="../Assets/patita-like.png" alt="white_paw" class="paw-img" id="pawPostsDivBtns" ></button>
-            <button class="edit-posts-div-btns"><img src="../Assets/edit-img.png" alt="edit-icon" class="edit-img" id="editPostsDivBtns" data-id="${postsContent.id}"></button>
-            <button class="delete-posts-div-btns"><img src="../Assets/delete-trash.png" alt="delete-trash" class="delete-img" id="deletePostsDivBtns" data-id="${postsContent.id}"></button>
-            </div>
+                <div>
+                    <label class="author-name" for="user" id="authorName">${postData.authorName}</label>
+                    <label class="date" for="date" id="date">${postData.date}</label>
+                </div>
+                <div class="posts-publication">
+                    <h3>${postData.description}</h3>
+                </div>
+            </section>
+            <section class="btn-posts" id="btnPosts">    
+                <div class="posts-div-btns" id="postsDivBtns">            
+                    <button class="paw-posts-div-btns"><img src="../Assets/patita-like.png" alt="white_paw" class="paw-img" id="pawPostsDivBtns" ></button>
+                    ${loggedInUserId === postData.authorId ? userBtns : ''}
+                </div>
             </section>
             `
         })
