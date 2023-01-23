@@ -1,12 +1,7 @@
-import { getDoc, doc, database, firebaseAuth } from './firebase.js';
+import { database, addDoc, collection, getDocs } from './firebase.js';
 
-// obtener datos
-const getPostData = (uid) => {
-    getDoc(doc(database, 'usuarios', firebaseAuth.currentUser.uid))
-};
-const getPostData2 = (uid) => {
-    getDoc(doc(database, 'usuarios', firebaseAuth.currentUser.uid, 'userPosts', uid))
-};
-  // https://firebase.google.com/docs/firestore/query-data/get-data#get_a_document
+const saveTask = (description) => {
+  return addDoc(collection(database , 'posts'), {description});
 
-export { getPostData, getPostData2 }
+};
+export { saveTask }
