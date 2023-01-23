@@ -1,5 +1,5 @@
    // import { EmailLogin } from '../src/components/EmailLogin.js'
-    import { signInWithEmailAndPassword, firebaseAuth, signOut, sendPasswordResetEmail, createUserWithEmailAndPassword, sendEmailVerification } from '../src/app/firebase.js'
+    import { signInWithEmailAndPassword, firebaseAuth, signOut, sendPasswordResetEmail, createUserWithEmailAndPassword, sendEmailVerificatio, updateProfile } from '../src/app/firebase.js'
     import { signInAccount } from '../src/app/signIn.js'
     import { signOutFun } from '../src/app/signOut.js';
     import { pswReset } from '../src/app/PswReset.js';
@@ -10,17 +10,17 @@
             firebaseAuth: jest.fn(() =>{
                 return {firebaseAuth:'TEST'}
             }),
-            signInWithEmailAndPassword: jest.fn((firebaseAuth, email,password) => {
+            signInWithEmailAndPassword: jest.fn((email,password) => {
                 if(!email || !password){
                     throw new Error('ERROR')
                 }
                 return Promise.resolve({ user: 'admin' })
             }),
             signOut: jest.fn((auth)=>{
-                if (!auth) return Promise.reject("no auth parameter")
+                if (!auth) return Promise.reject('no auth parameter')
             }),
             sendPasswordResetEmail: jest.fn((auth, email)=>{
-                if(!auth || !email) return Promise.reject("no email or auth")
+                if(!auth || !email) return Promise.reject('no email or auth')
             }),
             createUserWithEmailAndPassword: jest.fn((email, password)=>{
                 if(!email || !password){
@@ -30,6 +30,9 @@
             }),
             sendEmailVerification: jest.fn((auth)=>{
                 if (!auth) return Promise.reject()
+            }),
+            updateProfile: jest.fn((displayName, auth)=>{
+                if(!auth || !displayName) return Promise.reject('no displayName or auth')
             })
         }
     })
@@ -38,6 +41,7 @@
         const email = "petblr@test.com"
         const password = "Petblrlomejor123"
         const repeatPsw = "Petblrlomejor123"
+        const displayName = "Petblr"
         
         it('Should call signInWithEmailAndPassword', async()=> {
             await signInAccount(email, password)
@@ -67,7 +71,7 @@
                 const result = await signOutFun()
                 expect(result).toBe(false)
             } catch (error) {
-                expect(error).toBe("no auth parameter")
+                expect(error).toBe('no auth parameter')
             }
         })
 
@@ -80,7 +84,7 @@
             try {
                 await pswReset(email)
             } catch (error) {
-                expect(error).toBe("no email or auth")
+                expect(error).toBe('no email or auth')
             }
         })
 
@@ -88,7 +92,7 @@
             try {
                 await registrar()
             } catch (error) {
-                expect(error).toBe("generic_failure")
+                expect(error).toBe('generic_failure')
             }
         })
 
@@ -96,7 +100,15 @@
             try {
                 await registrar(email, password)
             } catch (error) {
-                expect(error).toBe("wrong password")
+                expect(error).toBe('wrong password')
+            }
+        })
+
+        it('should throw an error sendPasswordResetEmail firebase function', async()=>{
+            try {
+                await updateProfile(displayName)
+            } catch (error) {
+                expect(error).toBe('no displayName or auth')
             }
         })
     })
