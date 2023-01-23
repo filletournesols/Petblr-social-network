@@ -7,8 +7,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { getFirestore, collection, getDoc, getDocs, setDoc, doc,
   onSnapshot, query, where, deleteDoc, updateDoc, arrayRemove, arrayUnion,
-  addDoc 
-} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
+  addDoc } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
 import { getStorage, ref } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js'
 
 // configuración de la app de firebase
@@ -67,5 +66,5 @@ export {
   getDocs, setDoc, doc, onSnapshot, query, where, deleteDoc,
   updateDoc, arrayRemove, arrayUnion, getStorage, ref,
   storage, database, storageRef, collectionUserName, collectionUserNamesSpanish,
-  collectionPost, addDoc, getTask, getOnDatas,getPost, updatePosts, erasePost
+  collectionPost, addDoc, getTask, getOnDatas,getPost, updatePosts, erasePost 
 };
