@@ -35,7 +35,6 @@ export const Feed = () => {
         </form>
     </section>
     <div id="postsContainer">
-    
     </div>
     `
     FeedDiv.innerHTML = template
@@ -70,14 +69,11 @@ export const Feed = () => {
         e.preventDefault();
         if (!stateEdit) {
             saveTask(posts.value)
-            console.log('Esto es publicar')
         } else {
             updatePosts(id, { description: posts.value })
             stateEdit = false
             id = ''
-            console.log('esto es editar')
         }
-
         taskForm.reset();
     })
 
@@ -86,7 +82,6 @@ export const Feed = () => {
         listasPosts.forEach((postsContent) => {
             const lista = postsContent.data();
             postsContainer.innerHTML += `
-        
             <section class="posts" id="posts">
             <div class="posts-publication">
             <h3>${lista.description}</h3>
@@ -113,7 +108,7 @@ export const Feed = () => {
                     forTextArea.value = post.description
                 } catch (error) { 
                     return error
-                }
+                }                
             });
         })
 
