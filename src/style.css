@@ -391,7 +391,7 @@ main .recover-psw .recover-psw-form .recover-psw-form-background input {
     text-indent: 1rem;
     margin-top: 0.5rem;
     color: var(--dogBrown);
-    font-family: 'Merriweather', serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 main .recover-psw .recover-psw-form .recover-psw-form-background button {
@@ -417,6 +417,7 @@ main .logo-feed {
 main .logo-feed .nav-bar .logo-feed-img {
     width: 20%;
     background: none;
+    margin: 1.8%;
 }
 
 /* menu / hamburger */
@@ -425,11 +426,13 @@ main .logo-feed .nav-bar .nav-menu .nav-item-li {
     list-style: none;
 }
 
+/* tipografia menu */
 main .logo-feed .nav-bar .nav-menu .nav-item-li a {
     color: var(--lightIvory);
     text-decoration: none;
     background: none;
     font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 main .logo-feed .nav-bar {
@@ -438,6 +441,7 @@ main .logo-feed .nav-bar {
     justify-content: space-between;
     align-items: center;
     background-color: var(--pigPink);
+   
 }
 
 main .logo-feed .nav-bar .nav-menu {
@@ -446,7 +450,7 @@ main .logo-feed .nav-bar .nav-menu {
     align-items: center;
     gap: 3rem;
     background-color: var(--pigPink);
-    margin-right: 1rem;
+    margin-right: 1.8%;
 }
 
 main .logo-feed .nav-bar .nav-menu .nav-item-li .nav-link {
@@ -473,6 +477,23 @@ main .logo-feed .nav-bar .hamburger-div .bar {
     /* -webkit-transition: all 0.3s ease-in-out*/
 }
 
+/* Feed publicaciones (task form) */
+main .task-form {
+   margin: 5rem;
+}
+
+main .task-form .user-name {
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+/* main .task-form .posts-div-p {
+    width: 60%;
+    height: 7rem;
+} */
+
+
+
 /* Feed create post button */
 main .create-post {
     display: flex;
@@ -480,7 +501,7 @@ main .create-post {
     align-items: center;
 }
 
-main .create-post .create-post-button {
+main .create-post .create-post-btn {
     background: none;
     cursor: pointer;
     margin-top: 2rem;
@@ -494,11 +515,14 @@ main .create-post .create-post-button {
     box-shadow: 0px 4px 4px rgba(42, 21, 21, 0.25);
 }
 
-/* Feed posts */
+/* Feed publicaciones */
 main .posts {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* margin: 3rem; */
+    /* width: 60%;
+    height: 5rem;  */
 }
 
 main .posts .posts-background {
@@ -506,7 +530,8 @@ main .posts .posts-background {
     flex-direction: column;
     align-items: center;
     width: 60%;
-    background-color: var(--fairIvory);
+    height: 5rem;
+    background-color:var(--lightIvory);
     margin-top: 2rem;
 }
 
@@ -514,14 +539,48 @@ main .posts .task-form .posts-div-p {
     background-color: var(--snowWhite);
     border: none;
     width: 100%;
+    height: 14rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    padding: 0.8em;
+}
+
+/* BOTON DE PUBLICAR */
+main .create-post-btn {
+    background: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    font-size: 2rem;
+    /* font-weight: 600; */
+    border-radius: 1rem;
+    width: 25rem;
     height: 4rem;
+    background-color: var(--pigPink);
+    color: var(--lightIvory);
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* Feed button posts */
+
+/* la publicacion, btn post*/
+
+main h3 {
+    /* display: flex; */
+    /* flex-direction: row; */
+    font-size: 2rem;
+    background-color: var(--snowWhite);
+    height: 10rem;
+    width: 40rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.8em;
+    color: var(--chocolate);
+    }
+
 main .btn-posts {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
 }
 
 main .btn-posts .posts-div-btns {
@@ -532,6 +591,7 @@ main .btn-posts .posts-div-btns {
     height: 4rem;
     background-color: var(--pigPink);
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    margin-bottom: 4rem;
 }
 
 main .btn-posts .posts-div-btns .paw-posts-div-btns {
@@ -549,15 +609,37 @@ main .btn-posts .posts-div-btns .paw-posts-div-btns .paw-img {
 main .btn-posts .posts-div-btns .edit-posts-div-btns {
     background: none;
     cursor: pointer;
-    font-size: 2rem;
     border: none;
-    color: var(--lightIvory);
 }
 
-/* responsive */
+main .btn-posts .posts-div-btns .edit-posts-div-btns .edit-img {
+    background: none;
+    width: 3rem;
+    height: 3rem;
+}
+
+main .btn-posts .posts-div-btns .delete-posts-div-btns {
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+
+main .btn-posts .posts-div-btns .delete-posts-div-btns .delete-img {
+    background: none;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Responsive */
+/* Para crear un mínimo de movimiento de la pantalla */
 /* 1rem=16px  16x5=80px */
 /* 5rem = 80 px */
-/* para crear un mínimo de movimiento de la pantalla */
 @media screen and (max-width: 19rem) {
     .main-logo-img {
         margin-left: 5%;
@@ -726,7 +808,7 @@ main .btn-posts .posts-div-btns .edit-posts-div-btns {
         font-size: 1.4rem;
     }
 
-    main .create-post .create-post-button {
+    main .create-post .create-post-btn {
         width: 20rem;
         height: 2.5rem;
         font-size: 1.4rem;
@@ -862,7 +944,7 @@ main .btn-posts .posts-div-btns .edit-posts-div-btns {
         font-size: 1.7rem;
     }
 
-    main .create-post .create-post-button {
+    main .create-post .create-post-btn {
         width: 22rem;
         height: 3rem;
         font-size: 1.7rem;
@@ -987,7 +1069,7 @@ main .btn-posts .posts-div-btns .edit-posts-div-btns {
         font-size: 1.7rem;
     }
 
-    main .create-post .create-post-button {
+    main .create-post .create-post-btn {
         width: 25rem;
         height: 4rem;
         border-radius: 0.8rem;
@@ -1255,7 +1337,7 @@ main .btn-posts .posts-div-btns .edit-posts-div-btns {
         font-size: 3rem;
     }
 
-    main .create-post .create-post-button {
+    main .create-post .create-post-btn {
         font-size: 2rem;
     }
 
