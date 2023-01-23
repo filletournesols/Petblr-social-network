@@ -71,7 +71,6 @@ export const Feed = () => {
             const userName = firebaseAuth.currentUser.displayName
             const date = new Date().toLocaleDateString('es-es', {month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'})
             const createdAt = serverTimestamp()
-            console.log({loggedInUserId})
             saveTask(posts.value, loggedInUserId, userName, date, createdAt)
         } else {
             updatePosts(id, { description: posts.value })
