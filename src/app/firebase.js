@@ -8,7 +8,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { getFirestore, collection, getDoc, getDocs, setDoc, doc,
   onSnapshot, query, where, deleteDoc, updateDoc, arrayRemove, arrayUnion,
-  addDoc } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
+  addDoc, serverTimestamp, orderBy } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
 import { getStorage, ref } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js'
 
 // configuración de la app de firebase
@@ -40,7 +40,7 @@ const collectionPost = collection(database, 'posts');
 const getTask = () => getDocs(collection(database, 'posts'));
 
 const getOnDatas = (callback) => {
-  const orderQuery = query(collection(database,'posts'));
+  const orderQuery = query(collection(database,'posts'), orderBy('createdAt', 'desc'));
   onSnapshot(orderQuery,(callback))
 };
 
@@ -67,5 +67,5 @@ export {
   updateDoc, arrayRemove, arrayUnion, getStorage, ref,
   storage, database, storageRef, collectionUserName, collectionUserNamesSpanish,
   collectionPost, addDoc, getTask, getOnDatas,getPost, updatePosts, erasePost,
-  onAuthStateChanged, updateProfile
+  onAuthStateChanged, updateProfile, serverTimestamp
 };

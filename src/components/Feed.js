@@ -1,6 +1,6 @@
 import { signOutFun } from '../app/signOut.js';
 import { onNavigate } from '../main.js';
-import { firebaseAuth, getOnDatas, getPost, updatePosts, erasePost } from '../app/firebase.js';
+import { firebaseAuth, getOnDatas, getPost, updatePosts, erasePost, serverTimestamp } from '../app/firebase.js';
 import { saveTask } from '../app/addDoc.js';
 
 export const Feed = () => {
@@ -29,7 +29,6 @@ export const Feed = () => {
     </section>
     <section class="posts" id="posts">
         <form class="task-form" id="taskForm">
-            <label class="user-name" for="user">Usuario</label>
             <textarea class="posts-div-p" id="postsTextArea" rows="3" placeholder="¿Qué piensas?"></textarea>
             <button class="create-post-btn" id="createPostBtn">PUBLICAR</button>
         </form>
@@ -70,8 +69,10 @@ export const Feed = () => {
         if (!stateEdit) {
             const loggedInUserId = window.localStorage.getItem('loggedInUserId')
             const userName = firebaseAuth.currentUser.displayName
+            const date = new Date().toLocaleDateString('es-es', {month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'})
+            const createdAt = serverTimestamp()
             console.log({loggedInUserId})
-            saveTask(posts.value, loggedInUserId, userName)
+            saveTask(posts.value, loggedInUserId, userName, date, createdAt)
         } else {
             updatePosts(id, { description: posts.value })
             stateEdit = false
@@ -93,8 +94,8 @@ export const Feed = () => {
             postsContainer.innerHTML += `
             <section class="posts" id="posts">
                 <div>
-                    <label class="user-name" for="user">${postData.authorName}</label>
-                    <label class="date" for="date">Fecha</label>
+                    <label class="author-name" for="user" id="authorName">${postData.authorName}</label>
+                    <label class="date" for="date" id="date">${postData.date}</label>
                 </div>
                 <div class="posts-publication">
                     <h3>${postData.description}</h3>
