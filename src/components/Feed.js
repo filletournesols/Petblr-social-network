@@ -87,6 +87,9 @@ export const Feed = () => {
         postsContainer.innerHTML = ''
         listasPosts.forEach((firebasePost) => {
             const postData = firebasePost.data();
+            //console.log ('Este es postdata',postData);
+            id = postData.id
+            console.log ('Acá consoleando id', id)
             const userBtns = `
             <button class="edit-posts-div-btns"><img src="../Assets/edit-img.png" alt="edit-icon" class="edit-img" id="editPostsDivBtns" data-id="${firebasePost.id}"></button>
             <button class="delete-posts-div-btns"><img src="../Assets/delete-trash.png" alt="delete-trash" class="delete-img" id="deletePostsDivBtns" data-id="${firebasePost.id}"></button>`
@@ -102,11 +105,11 @@ export const Feed = () => {
             </section>
             <section class="btn-posts" id="btnPosts">    
                 <div class="posts-div-btns" id="postsDivBtns">            
-                    <button data-uid='${postData.id}' class="paw-posts-div-btns">
-                        <img src="../Assets/patita-like.png" alt="white_paw" class="paw-img" id="pawPostsDivBtns">
+                    <button  class="paw-posts-div-btns">
+                        <img src="../Assets/patita-like.png" alt="white_paw" class="paw-img" data-id="${firebasePost.id}" id="pawPostsDivBtns">
                     </button>
                     <span class = "number-of-likes" id="numberOfLikes">${postData.arrayUsersLikes}</span>
-                    ${loggedInUserId === postData.authorId ? userBtns : ''}
+                    ${postData.loggedInUserId === postData.authorId ? userBtns : ''}
                 </div>
             </section>
             `            
@@ -135,38 +138,49 @@ export const Feed = () => {
             })
         });
 
-        const likeButton = FeedDiv.querySelectorAll('.paw-posts-div-btns');
-        const numberOfLikes = FeedDiv.querySelectorAll('.number-of-likes');
-        numberOfLikes.forEach((btn) => {
-            if (btn.innerHTML === '0') {
-                btn.classList.add('hide');
-            } else {
-                btn.classList.remove('hide');
-            }
-        })
 
-        likeButton.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                const currentUserLike = firebaseAuth.currentUser.uid;
-                console.log({currentUserLike})
-                const idLikeButton = e.target.dataset.uid;
-                console.log({idLikeButton})
-                getPost(idLikeButton)
-                    .then((document) => {
-                        const post = document.data();
-                        if (!post.arrayUsersLikes.includes(currentUserLike)) {
-                            const likes = (post.amountLikes) + 1;
-                            likePost(idLikeButton, likes, currentUserLike);
-                        } else {
-                            const likes = (post.amountLikes) - 1;
-                            dislikePost(idLikeButton, likes, currentUserLike);
-                        }
-                    })
-                    .catch(() => {
-                    });
-            });
+        const likeBtn = FeedDiv.querySelectorAll(".pawPostsDivBtns");
+        likeBtn.forEach((btn) => {
+            btn.addEventListener('click', ({ target: { dataset } }) => {
+                erasePost(dataset.id) 
+                console.log('amigo por favor funciona', likeBtn)               
+            })
+            
         });
-    })
+         
+
+        // const likeButton = FeedDiv.querySelectorAll('.paw-posts-div-btns');
+        // const numberOfLikes = FeedDiv.querySelectorAll('.number-of-likes');
+        // numberOfLikes.forEach((btn) => {
+        //     if (btn.innerHTML === '0') {
+        //         btn.classList.add('hide');
+        //     } else {
+        //         btn.classList.remove('hide');
+        //     }
+        // })
+
+        // likeButton.forEach((btn) => {
+        //     btn.addEventListener('click', (e) => {
+        //         const currentUserLike = firebaseAuth.currentUser.uid;
+        //         console.log({currentUserLike})
+        //         const idLikeButton = target.dataset.id
+        //         console.log({idLikeButton})
+        //         getPost(idLikeButton)
+        //             .then((document) => {
+        //                 const post = document.data();
+        //                 if (!post.arrayUsersLikes.includes(currentUserLike)) {
+        //                     const likes = (post.amountLikes) + 1;
+        //                     likePost(idLikeButton, likes, currentUserLike);
+        //                 } else {
+        //                     const likes = (post.amountLikes) - 1;
+        //                     dislikePost(idLikeButton, likes, currentUserLike);
+        //                 }
+    //                 })
+    //                 .catch(() => {
+    //                 });
+    //         });
+    //     });
+     })
 
     return FeedDiv;
 }
