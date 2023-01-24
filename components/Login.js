@@ -23,7 +23,8 @@ export const Login = () => {
     `
     LoginDiv.innerHTML = template 
     LoginDiv.querySelector('#emailBtn').addEventListener('click', () => onNavigate('/emaillogin'))
-    LoginDiv.querySelector('#facebookBtn').addEventListener('click', AuthAccountFacebook)
+    LoginDiv.querySelector('#facebookBtn').addEventListener('click', (AuthAccountFacebook))
+    LoginDiv.querySelector('#facebookBtn').addEventListener('click', () => onNavigate('/feed'))
     LoginDiv.querySelector('#emailFacebookPageAccountBtn').addEventListener('click', () => onNavigate('/signup'))
     return LoginDiv;
 }
