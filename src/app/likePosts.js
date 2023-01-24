@@ -1,4 +1,4 @@
-import { updateDoc, doc, database, arrayUnion } from './firebase.js';
+import { updateDoc, doc, database, arrayUnion, arrayRemove } from './firebase.js';
 
 // va con await
 // https://firebase.google.com/docs/firestore/manage-data/add-data#update-data

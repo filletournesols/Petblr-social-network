@@ -2,8 +2,7 @@ import { signOutFun } from '../app/signOut.js';
 import { onNavigate } from '../main.js';
 import { firebaseAuth, getOnDatas, getPost, updatePosts, erasePost, serverTimestamp } from '../app/firebase.js';
 import { saveTask } from '../app/addDoc.js';
-import { likePost } from '../app/likePosts.js';
-import { dislikePost } from '../app/dislikePost.js';
+import { likePost, dislikePost } from '../app/likePosts.js';
 
 export const Feed = () => {
     const FeedDiv = document.createElement('div');
@@ -73,7 +72,9 @@ export const Feed = () => {
             const userName = firebaseAuth.currentUser.displayName
             const date = new Date().toLocaleDateString('es-es', {month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'})
             const createdAt = serverTimestamp()
-            saveTask(posts.value, loggedInUserId, userName, date, createdAt)
+            const amountLikes = ""
+            const arrayUsersLikes = ""
+            saveTask(posts.value, loggedInUserId, userName, date, createdAt, amountLikes, arrayUsersLikes)
         } else {
             updatePosts(id, { description: posts.value })
             stateEdit = false
@@ -88,29 +89,35 @@ export const Feed = () => {
         listasPosts.forEach((firebasePost) => {
             const postData = firebasePost.data();
             const userBtns = `
-            <button class="edit-posts-div-btns"><img src="../Assets/edit-img.png" alt="edit-icon" class="edit-img" id="editPostsDivBtns" data-id="${firebasePost.id}"></button>
-            <button class="delete-posts-div-btns"><img src="../Assets/delete-trash.png" alt="delete-trash" class="delete-img" id="deletePostsDivBtns" data-id="${firebasePost.id}"></button>`
+            <button class="edit-posts-div-btns">
+                <img src="../Assets/edit-img.png" alt="edit-icon" class="edit-img" id="editPostsDivBtns" data-id="${firebasePost.id}">
+            </button>
+            <button class="delete-posts-div-btns">
+                <img src="../Assets/delete-trash.png" alt="delete-trash" class="delete-img" id="deletePostsDivBtns" data-id="${firebasePost.id}">
+            </button>`
             postsContainer.innerHTML += `
             <section class="posts" id="posts">
                 <div>
-                    <label class="author-name" for="user" id="authorName">${postData.authorName}</label>
-                    <label class="date" for="date" id="date">${postData.date}</label>
+                    <label class="author-name" for="user">${postData.authorName}</label>
+                    <label class="date" for="date">${postData.date}</label>
                 </div>
                 <div class="posts-publication">
                     <h3>${postData.description}</h3>
                 </div>
             </section>
-            <section class="btn-posts" id="btnPosts">    
-                <div class="posts-div-btns" id="postsDivBtns">            
-                    <button data-uid='${postData.id}' class="paw-posts-div-btns">
-                        <img src="../Assets/patita-like.png" alt="white_paw" class="paw-img" id="pawPostsDivBtns">
+            <section class="btn-posts">    
+                <div class="posts-div-btns">            
+                    <button data-uid="${firebasePost.id}" class="paw-posts-div-btns">
+                        Like
                     </button>
-                    <span class = "number-of-likes" id="numberOfLikes">${postData.arrayUsersLikes}</span>
+                    <span class = "number-of-likes">${postData.arrayUsersLikes.length}</span>
                     ${loggedInUserId === postData.authorId ? userBtns : ''}
                 </div>
             </section>
             `
         })
+
+        //<img src="../Assets/patita-like.png" alt="white_paw" class="paw-img">
 
         const btnEditDiv = FeedDiv.querySelectorAll(".edit-posts-div-btns")
         const forTextArea = FeedDiv.querySelector("#postsTextArea")
@@ -131,12 +138,15 @@ export const Feed = () => {
         const eraseBTn = FeedDiv.querySelectorAll(".delete-posts-div-btns");
         eraseBTn.forEach((btn) => {
             btn.addEventListener('click', ({ target: { dataset } }) => {
-                erasePost(dataset.id)
+                const result = confirm("¿Estás seguro de eliminar la publicación?")
+                if (result === false) {} 
+                else {erasePost(dataset.id)}
             })
         });
 
         const likeButton = FeedDiv.querySelectorAll('.paw-posts-div-btns');
         const numberOfLikes = FeedDiv.querySelectorAll('.number-of-likes');
+
         numberOfLikes.forEach((btn) => {
             if (btn.innerHTML === '0') {
                 btn.classList.add('hide');
@@ -148,9 +158,7 @@ export const Feed = () => {
         likeButton.forEach((btn) => {
             btn.addEventListener('click', (e) => {
                 const currentUserLike = firebaseAuth.currentUser.uid;
-                console.log({currentUserLike})
                 const idLikeButton = e.target.dataset.uid;
-                console.log({idLikeButton})
                 getPost(idLikeButton)
                     .then((document) => {
                         const post = document.data();
