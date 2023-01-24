@@ -50,13 +50,6 @@ const updatePosts = (id, newFields) =>
 
 const erasePost = (id) => deleteDoc(doc(database, 'posts', id))
 
-// Guardar username desde el registro
-// const saveDisplayName = (usernameIngresado) => {
-//   return updateProfile(firebaseAuth.currentUser, {displayName: usernameIngresado})
-// };
-
-
-
 export {
   firebaseApp, firebaseAuth, createUserWithEmailAndPassword,
   sendPasswordResetEmail, sendEmailVerification,

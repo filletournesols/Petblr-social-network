@@ -634,13 +634,17 @@ main .btn-posts .posts-div-btns .paw-posts-div-btns {
     background: none;
     cursor: pointer;
     border: none;
+    font-size: 2rem;
+    color: var(--lightIvory);
+    padding: 0.5em;
 }
 
-main .btn-posts .posts-div-btns .paw-posts-div-btns .paw-img {
-    background: none;
+/* main .btn-posts .posts-div-btns .paw-posts-div-btns .paw-img {
+    background-image: url("../src/Assets/patita-like.png");
+    background-repeat: no-repeat;
     width: 3rem;
     height: 3rem;
-}
+} */
 
 main .btn-posts .posts-div-btns .edit-posts-div-btns {
     background: none;
@@ -665,6 +669,14 @@ main .btn-posts .posts-div-btns .delete-posts-div-btns .delete-img {
     width: 3rem;
     height: 3rem;
     cursor: pointer;
+}
+
+main .btn-posts .posts-div-btns .number-of-likes {
+    background: none;
+    font-size: 2rem;
+    color: var(--lightIvory);
+    padding: 0.5em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Responsive */
