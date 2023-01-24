@@ -2,6 +2,8 @@ import { signOutFun } from '../app/signOut.js';
 import { onNavigate } from '../main.js';
 import { firebaseAuth, getOnDatas, getPost, updatePosts, erasePost, serverTimestamp } from '../app/firebase.js';
 import { saveTask } from '../app/addDoc.js';
+import { likePost } from '../app/likePosts.js';
+import { dislikePost } from '../app/dislikePost.js';
 
 export const Feed = () => {
     const FeedDiv = document.createElement('div');
@@ -80,8 +82,6 @@ export const Feed = () => {
         taskForm.reset();
     })
 
-    //Timestamp.fromDate(new Date())
-
     getOnDatas((listasPosts) => {
         const loggedInUserId = window.localStorage.getItem('loggedInUserId')
         postsContainer.innerHTML = ''
@@ -102,7 +102,10 @@ export const Feed = () => {
             </section>
             <section class="btn-posts" id="btnPosts">    
                 <div class="posts-div-btns" id="postsDivBtns">            
-                    <button class="paw-posts-div-btns"><img src="../Assets/patita-like.png" alt="white_paw" class="paw-img" id="pawPostsDivBtns" ></button>
+                    <button data-uid='${postData.id}' class="paw-posts-div-btns">
+                        <img src="../Assets/patita-like.png" alt="white_paw" class="paw-img" id="pawPostsDivBtns">
+                    </button>
+                    <span class = "number-of-likes" id="numberOfLikes">${postData.arrayUsersLikes}</span>
                     ${loggedInUserId === postData.authorId ? userBtns : ''}
                 </div>
             </section>
@@ -130,6 +133,38 @@ export const Feed = () => {
             btn.addEventListener('click', ({ target: { dataset } }) => {
                 erasePost(dataset.id)                
             })
+        });
+
+        const likeButton = FeedDiv.querySelectorAll('.paw-posts-div-btns');
+        const numberOfLikes = FeedDiv.querySelectorAll('.number-of-likes');
+        numberOfLikes.forEach((btn) => {
+            if (btn.innerHTML === '0') {
+                btn.classList.add('hide');
+            } else {
+                btn.classList.remove('hide');
+            }
+        })
+
+        likeButton.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                const currentUserLike = firebaseAuth.currentUser.uid;
+                console.log({currentUserLike})
+                const idLikeButton = e.target.dataset.uid;
+                console.log({idLikeButton})
+                getPost(idLikeButton)
+                    .then((document) => {
+                        const post = document.data();
+                        if (!post.arrayUsersLikes.includes(currentUserLike)) {
+                            const likes = (post.amountLikes) + 1;
+                            likePost(idLikeButton, likes, currentUserLike);
+                        } else {
+                            const likes = (post.amountLikes) - 1;
+                            dislikePost(idLikeButton, likes, currentUserLike);
+                        }
+                    })
+                    .catch(() => {
+                    });
+            });
         });
     })
 
