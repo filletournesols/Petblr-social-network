@@ -33,7 +33,7 @@ export const Feed = () => {
             <button class="create-post-btn" id="createPostBtn">PUBLICAR</button>
         </form>
     </section>
-    <div id="postsContainer">
+    <div class="post-container" id="postsContainer">
     </div>
     `
     FeedDiv.innerHTML = template
@@ -92,7 +92,7 @@ export const Feed = () => {
             <button class="delete-posts-div-btns"><img src="../Assets/delete-trash.png" alt="delete-trash" class="delete-img" id="deletePostsDivBtns" data-id="${firebasePost.id}"></button>`
             postsContainer.innerHTML += `
             <section class="posts" id="posts">
-                <div>
+                <div class="name-date-div">
                     <label class="author-name" for="user" id="authorName">${postData.authorName}</label>
                     <label class="date" for="date" id="date">${postData.date}</label>
                 </div>
@@ -132,6 +132,38 @@ export const Feed = () => {
             })
         });
     })
+
+    // const likeButton = postPublicado.querySelectorAll('.paw-posts-div-btns');
+    //     const likeImg = postPublicado.querySelectorAll('.paw-img');
+    //     const contadorLikes = postPublicado.querySelectorAll('.contadorLikes');
+    //     contadorLikes.forEach((btn) => {
+    //         if (btn.innerHTML === '0') {
+    //             btn.classList.add('hide');
+    //         } else {
+    //             btn.classList.remove('hide');
+    //         }
+    //     });
+
+    // likeButton.forEach((btn) => {
+    //     btn.addEventListener('click', (e) => {
+    //         const currentUserLike = auth.currentUser.uid;
+    //         const idLikeButton = e.target.dataset.uid;
+    //         getPostData2(idLikeButton)
+    //             .then((document) => {
+    //                 const post = document.data();
+    //                 if (!post.arrayUsersLikes.includes(currentUserLike)) {
+    //                     const likes = (post.amountLikes) + 1;
+    //                     likePost(idLikeButton, likes, currentUserLike);
+    //                 } else {
+    //                     const likes = (post.amountLikes) - 1;
+    //                     dislikePost(idLikeButton, likes, currentUserLike);
+    //                     likeImg.src = './assets/heart.png';
+    //                 }
+    //             })
+    //             .catch(() => {
+    //             });
+    //     });
+    // });
 
     return FeedDiv;
 }
