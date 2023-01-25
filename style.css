@@ -493,7 +493,6 @@ main .task-form .user-name {
 } */
 
 
-
 /* Feed create post button */
 main .create-post {
     display: flex;
@@ -516,15 +515,17 @@ main .create-post .create-post-btn {
 }
 
 /* Feed publicaciones */
+
 main .posts {
     display: flex;
     flex-direction: column;
     align-items: center;
     /* margin: 3rem; */
-    /* width: 60%;
+    /* width: 60%; 
     height: 5rem;  */
 }
 
+/* responsive */
 main .posts .posts-background {
     display: flex;
     flex-direction: column;
@@ -545,6 +546,8 @@ main .posts .task-form .posts-div-p {
     padding: 0.8em;
 }
 
+
+
 /* BOTON DE PUBLICAR */
 main .create-post-btn {
     background: none;
@@ -562,20 +565,53 @@ main .create-post-btn {
 }
 
 /* Feed button posts */
-
 /* la publicacion, btn post*/
 
+/* #postsContainer{
+    width: 50%;
+    align-items: center;
+    border: black;
+} */
+
+.name-date-div{
+    margin: 2rem;
+}
+
+.author-name {
+    font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--dogBrown);
+    margin-right: 20px;
+}
+
+.date{
+    font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dogBrown);
+ }
+
+ /* main .post-publication{
+    width: 100%;
+    color:var(--redCollar);
+} 
+
+main .post-publication{
+    width: 100%;
+}  */
+
 main h3 {
-    /* display: flex; */
-    /* flex-direction: row; */
+    display: flex;
+    flex-direction: row;
     font-size: 2rem;
     background-color: var(--snowWhite);
     height: 10rem;
-    width: 40rem;
+    /* width: 40rem; */
     font-family: Arial, Helvetica, sans-serif;
     padding: 0.8em;
     color: var(--chocolate);
     }
+
 
 main .btn-posts {
     display: flex;
@@ -643,9 +679,6 @@ main .btn-posts .posts-div-btns .number-of-likes {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-
 /* Responsive */
 /* Para crear un mínimo de movimiento de la pantalla */
 /* 1rem=16px  16x5=80px */
@@ -659,6 +692,21 @@ main .btn-posts .posts-div-btns .number-of-likes {
 
 /* 20rem = 320 px */
 @media screen and (min-width: 20rem) {
+
+    /* name and date  */
+    
+    h3{
+        width: 20rem;
+    }
+
+    .author-name{
+    font-size: 1.5rem;
+    }
+
+     .date{
+        font-size: 1.5rem;
+    }
+
     .main-logo-img {
         margin-left: 5%;
         width: 50%;
@@ -823,10 +871,15 @@ main .btn-posts .posts-div-btns .number-of-likes {
         height: 2.5rem;
         font-size: 1.4rem;
     }
+
 }
 
 /* 30rem = 480 px */
 @media screen and (min-width: 30rem) {
+    h3{
+        width: 29rem;
+    }
+
     .main-logo-img {
         width: 53%;
     }
@@ -961,13 +1014,18 @@ main .btn-posts .posts-div-btns .number-of-likes {
     }
 }
 
+
 /* 40rem = 640 px */
 @media screen and (min-width: 40rem) {
-    .main-logo-img {
+    h3{
+        width: 39rem;
+    }
+
+    .main-logo-img  {
         width: 57%;
     }
 
-    main .home .home-div {
+    main .home h3 .home-div {
         width: 100%;
         margin-left: 20%;
     }
@@ -1137,6 +1195,10 @@ main .btn-posts .posts-div-btns .number-of-likes {
 
 /* 62rem = 992px */
 @media screen and (min-width: 62rem) {
+
+    h3{
+        width: 59rem;
+    }
     .main-logo-img {
         width: 60%;
     }
@@ -1227,6 +1289,9 @@ main .btn-posts .posts-div-btns .number-of-likes {
 
 /* 87rem = 1392px */
 @media screen and (min-width: 87rem) {
+    h3{
+        width: 69rem;
+    }
     main .main-logo-img {
         width: 57%;
     }
@@ -1350,6 +1415,5 @@ main .btn-posts .posts-div-btns .number-of-likes {
     main .create-post .create-post-btn {
         font-size: 2rem;
     }
-
 
 }
