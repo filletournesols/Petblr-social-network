@@ -182,3 +182,15 @@ Diseño de alta fidelidad
 - [@filletournesols](https://github.com/filletournesols)
 - [@vickymendoza](https://github.com/vickymendoza)
 - [@fff3r](https://github.com/fff3r)
+
+
+### 8. Agradecimientos especiales
+
+* Rudolph, gerente general
+![Gerente general](./src/Assets/IMG_6373.jpg)
+
+* Cuchis bb, directora de comunicaciones
+![cuchis bb](./src/Assets/IMG-20220711-WA0057.jpeg)
+
+* Enriqueta Marraqueta, supervisora de proyecto
+![la ñora](./src/Assets/IMG_6722.jpg)
