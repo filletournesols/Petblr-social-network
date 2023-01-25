@@ -39,7 +39,7 @@ Nuestros principales usuarios, como lo mencionamos, son los dueños de mascotas 
 Petblr entrega una interfaz en la cual la mascotas pueden publicar sus pensamientos para compartirlos con la comunidad. Además, pueden darle me gusta a las publicaciones de las otras mascotas.
 
 Link a aplicación:
-[@Petblr](https://rococo-empanada-f80ff0.netlify.app)
+[Petblr](https://rococo-empanada-f80ff0.netlify.app)
 
 ### 5. Historias de usuario
 
