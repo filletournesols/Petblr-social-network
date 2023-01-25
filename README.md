@@ -6,6 +6,8 @@
 * Definición del producto
 * Historias de usuario
 * Diseño de la Interfaz de Usuario (prototipo de baja fidelidad y de alta fidelidad)
+* Autoras
+* Agradecimientos especiales
 
 ## 1. ¿Qué es Petblr?
 Es una red social pensada para todos los amantes de los animales, en PETBLR podrás crear un perfil para uno de los miembros más especiales de tu familia. Queremos que la atención sea sólo para ellos.
