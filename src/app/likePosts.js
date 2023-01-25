@@ -1,11 +1,5 @@
 import { updateDoc, doc, database, arrayUnion, arrayRemove } from './firebase.js';
 
-// va con await
-// https://firebase.google.com/docs/firestore/manage-data/add-data#update-data
-
-export const getPostData2 = (uid) => {
-    getDoc(doc(database, 'posts', uid))
-};
 // Like post
 const likePost = (uid, likes, userLike) => {
     updateDoc(doc(database, 'posts', uid),
