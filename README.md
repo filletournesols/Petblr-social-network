@@ -36,7 +36,10 @@ En este proyecto construimos una Red Social pensada para los amantes de las masc
 
 Nuestra aplicación es para los dueños de mascotas que quieren tener un lugar en el cual compartir el día a día de su mascota pero no desde su cuenta personal, si no que desde una cuenta de la mascota.
 Nuestros principales usuarios, como lo mencionamos, son los dueños de mascotas que quieran compartir la rutina de sus mascotas.
-Petblr entrega una interfaz en la cual ls mascotas pueden publicar sus pensamientos para compartirlos con la comunidad. Además, pueden darle me gusta a las publicaciones de las otras mascotas.
+Petblr entrega una interfaz en la cual la mascotas pueden publicar sus pensamientos para compartirlos con la comunidad. Además, pueden darle me gusta a las publicaciones de las otras mascotas.
+
+Link a aplicación:
+[@Petblr](https://app.netlify.com/sites/rococo-empanada-f80ff0/overview)
 
 ### 5. Historias de usuario
 
@@ -181,10 +184,9 @@ Diseño de alta fidelidad
 
 ### 7. Autoras
 
-- [@filletournesols](https://github.com/filletournesols)
 - [@vickymendoza](https://github.com/vickymendoza)
 - [@fff3r](https://github.com/fff3r)
-
+- [@filletournesols](https://github.com/filletournesols)
 
 ### 8. Agradecimientos especiales
 
