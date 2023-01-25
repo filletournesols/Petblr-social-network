@@ -1,13 +1,13 @@
 # Petblr
 
-* ¿Qué es Petblr?
-* Resumen del proyecto
-* Consideraciones generales
-* Definición del producto
-* Historias de usuario
-* Diseño de la Interfaz de Usuario (prototipo de baja fidelidad y de alta fidelidad)
-* Autoras
-* Agradecimientos especiales
+* [¿Qué es Petblr?](#1-¿qué-es-petblr)
+* [Resumen del proyecto](#2-resumen-del-proyecto)
+* [Consideraciones generales](#3-consideraciones-generales)
+* [Definición del producto](#4-definición-del-producto)
+* [Historias de usuario](#5-historias-de-usuario)
+* [Diseño de la Interfaz de Usuario (prototipo de baja fidelidad y de alta fidelidad)](#6-diseño-de-la-interfaz-de-usuario-prototipo-de-baja-fidelidad-y-de-alta-fidelidad)
+* [Autoras](#7-autoras)
+* [Agradecimientos especiales](#8-agradecimientos-especiales)
 
 ## 1. ¿Qué es Petblr?
 Es una red social pensada para todos los amantes de los animales, en PETBLR podrás crear un perfil para uno de los miembros más especiales de tu familia. Queremos que la atención sea sólo para ellos.
