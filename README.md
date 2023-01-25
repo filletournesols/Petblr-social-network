@@ -187,7 +187,7 @@ Diseño de alta fidelidad
 ### 8. Agradecimientos especiales
 
 * Rudolph, gerente general
-![Gerente general](./src/Assets/IMG_6373.jpg)
+![Gerente general](./src/Assets/IMG_0029.JPG)
 
 * Cuchis bb, directora de comunicaciones
 ![cuchis bb](./src/Assets/IMG-20220711-WA0057.jpeg)
